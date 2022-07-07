@@ -40,7 +40,10 @@ const AddBusinessUnit = () => {
     const [branchPhoneNumber, setBranchPhoneNumber] = useState('');
 
     const [departmentName, setDepartmentName] = useState('');
+    const [departmentValue, setDepartmentValue] = useState('');
+
     const [teamName, setTeamName] = useState('');
+    const [teamValue, setTeamValue] = useState('');
 
     const [businessType, setBusinessType] = useState('ho');
 
@@ -223,10 +226,15 @@ const AddBusinessUnit = () => {
                                     />
                                     <FormControl fullWidth margin="normal">
                                         <InputLabel id="demo-simple-select-label">Business Unit</InputLabel>
-                                        <Select labelId="demo-simple-select-label" id="demo-simple-select" label="Business Unit">
-                                            <MenuItem value={10}>Kandy branch</MenuItem>
-                                            <MenuItem value={20}>HR</MenuItem>
-                                            <MenuItem value={30}>Finance</MenuItem>
+                                        <Select labelId="demo-simple-select-label" 
+                                        id="demo-simple-select" 
+                                        label="Business Unit"
+                                         value={departmentValue}
+                                         onChange={(e) => setDepartmentValue(e.target.value)}
+                                         >
+                                            <MenuItem value="kandy branch">Kandy branch</MenuItem>
+                                            <MenuItem value="hr">HR</MenuItem>
+                                            <MenuItem value="Finance">Finance</MenuItem>
                                         </Select>
                                     </FormControl>
                                 </>
@@ -245,10 +253,15 @@ const AddBusinessUnit = () => {
                                     />
                                     <FormControl fullWidth margin="normal">
                                         <InputLabel id="demo-simple-select-label">Business Unit</InputLabel>
-                                        <Select labelId="demo-simple-select-label" id="demo-simple-select" label="Business Unit">
-                                            <MenuItem value={10}>Kandy branch</MenuItem>
-                                            <MenuItem value={20}>HR</MenuItem>
-                                            <MenuItem value={30}>Finance</MenuItem>
+                                        <Select labelId="demo-simple-select-label"
+                                         id="demo-simple-select" 
+                                         label="Business Unit"
+                                          value={teamValue}
+                                         onChange={(e) => setTeamValue(e.target.value)}
+                                         >
+                                            <MenuItem value="kandy branch">Kandy branch</MenuItem>
+                                            <MenuItem value="hr">HR</MenuItem>
+                                            <MenuItem value="Finance">Finance</MenuItem>
                                         </Select>
                                     </FormControl>
                                 </>
