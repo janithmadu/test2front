@@ -57,17 +57,17 @@ export default function componentStyleOverrides(theme) {
                         color: theme.menuSelected,
                         backgroundColor: theme.menuSelectedBack,
                         '&:hover': {
-                            backgroundColor: theme.menuSelectedBack
+                            backgroundColor: theme.gray500
                         },
                         '& .MuiListItemIcon-root': {
                             color: theme.menuSelected
                         }
                     },
                     '&:hover': {
-                        backgroundColor: theme.menuSelectedBack,
+                        backgroundColor: theme.gray100,
                         color: theme.menuSelected,
                         '& .MuiListItemIcon-root': {
-                            color: theme.menuSelected
+                            color: theme.gray900
                         }
                     }
                 }

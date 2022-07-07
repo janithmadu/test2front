@@ -11,12 +11,10 @@ import {
     Chip,
     ClickAwayListener,
     Grid,
-    InputAdornment,
     List,
     ListItemButton,
     ListItemIcon,
     ListItemText,
-    OutlinedInput,
     Paper,
     Popper,
     Stack,
@@ -28,11 +26,10 @@ import {
 // project imports
 import MainCard from 'ui-component/cards/MainCard';
 import Transitions from 'ui-component/extended/Transitions';
-import UpgradePlanCard from './UpgradePlanCard';
 import User1 from 'assets/images/users/user-round.svg';
 
 // assets
-import { IconLogout, IconSearch, IconSettings, IconUser } from '@tabler/icons';
+import { IconLogout, IconSettings, IconUser } from '@tabler/icons';
 
 // ==============================|| PROFILE MENU ||============================== //
 
@@ -41,9 +38,6 @@ const ProfileSection = () => {
     const customization = useSelector((state) => state.customization);
     const navigate = useNavigate();
 
-    const [sdm, setSdm] = useState(true);
-    const [value, setValue] = useState('');
-    const [notification, setNotification] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(-1);
     const [open, setOpen] = useState(false);
     /**
@@ -120,18 +114,17 @@ const ProfileSection = () => {
                         <Paper>
                             <ClickAwayListener onClickAway={handleClose}>
                                 <MainCard border={false} elevation={16} content={false} boxShadow shadow={theme.shadows[16]}>
-                                    <Box sx={{ p: 2 }}>
+                                    <Box sx={{ p: '16px 16px 0px 16px' }}>
                                         <Stack>
                                             <Stack direction="row" spacing={0.5} alignItems="center">
-                                                <Typography variant="h4">Good Morning,</Typography>
-                                                <Typography component="span" variant="h4" sx={{ fontWeight: 400 }}>
+                                                <Typography component="span" variant="h4" sx={{ fontWeight: 600 }}>
                                                     Johne Doe
                                                 </Typography>
                                             </Stack>
-                                            <Typography variant="subtitle2">Project Admin</Typography>
+                                            <Typography variant="subtitle1" sx={{ fontWeight: 400, fontSize:'0.875rem',color:'rgb(99, 115, 129)'}}>Administrator</Typography>
                                         </Stack>
                                     </Box>
-                                    <Box sx={{ p: 2 }}>
+                                    <Box sx={{ p: '0px 16px 16px 16px'}}>
                                         <List
                                             component="nav"
                                             sx={{
