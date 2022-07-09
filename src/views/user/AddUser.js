@@ -53,7 +53,7 @@ const AddUser = () => {
         <>
             <Box
                 sx={{
-                    padding: '40px',
+                    padding: { xs: '10px', md: '0px 130px 0px 130px' },
                     backgroundColor: '#fff',
                     margin: 'auto'
                 }}

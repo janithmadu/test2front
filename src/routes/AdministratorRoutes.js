@@ -21,11 +21,14 @@ const Suppliers = Loadable(lazy(() => import('views/partners/suppliers')));
 //add customer or suppliers or both
 const AddCustomersOrSuppliers = Loadable(lazy(() => import('views/partners/AddCustomersOrSuppliers')));
 
+//Protect Router
+import ProtectRouter from './ProtectRouter';
+
 // ==============================|| MAIN ROUTING ||============================== //
 
 const AdministratorRoutes = {
     path: '/administrator',
-    element: <MainLayout />,
+    element: <ProtectRouter />,
     children: [
         {
             path: 'business',
