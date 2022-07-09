@@ -52,6 +52,7 @@ const Customization = () => {
     };
 
     useEffect(() => {
+        console.log(borderRadius);
         dispatch({ type: SET_BORDER_RADIUS, borderRadius });
     }, [dispatch, borderRadius]);
 

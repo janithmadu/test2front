@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
@@ -34,14 +34,19 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 import Google from 'assets/images/icons/social-google.svg';
+import { SET_BORDER_RADIUS, SET_FONT_FAMILY, SET_LOGIN_SUCCESS, SET_TOKEN } from 'store/actions';
 
 // ============================|| FIREBASE - LOGIN ||============================ //
 
 const FirebaseLogin = ({ ...others }) => {
     const theme = useTheme();
+    const dispatch = useDispatch();
+
     const scriptedRef = useScriptRef();
     const matchDownSM = useMediaQuery(theme.breakpoints.down('md'));
     const customization = useSelector((state) => state.customization);
+    const auth = useSelector((state) => state.auth);
+
     const [checked, setChecked] = useState(true);
 
     const googleHandler = async () => {
@@ -55,6 +60,23 @@ const FirebaseLogin = ({ ...others }) => {
 
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
+    };
+
+    const setUp = () => {
+        console.log('setup');
+        const token = 'sawu28ueije3iu43u453ijrti';
+        //dispatch({ type: SET_BORDER_RADIUS, borderRadius });
+        dispatch({ type: SET_TOKEN, token });
+        localStorage.setItem('token', token);
+    };
+
+    // useEffect(() => {
+    //        console.log(borderRadius)
+    //        dispatch({ type: SET_BORDER_RADIUS, borderRadius });
+    //    }, [dispatch, borderRadius]);
+
+    const checkUp = () => {
+        console.log('checkup', auth);
     };
 
     return (
@@ -232,8 +254,25 @@ const FirebaseLogin = ({ ...others }) => {
                                     type="submit"
                                     variant="contained"
                                     color="secondary"
+                                    onClick={setUp}
                                 >
                                     Sign in
+                                </Button>
+                            </AnimateButton>
+                        </Box>
+                        <Box sx={{ mt: 2 }}>
+                            <AnimateButton>
+                                <Button
+                                    disableElevation
+                                    disabled={isSubmitting}
+                                    fullWidth
+                                    size="large"
+                                    type="submit"
+                                    variant="contained"
+                                    color="secondary"
+                                    onClick={checkUp}
+                                >
+                                    check
                                 </Button>
                             </AnimateButton>
                         </Box>

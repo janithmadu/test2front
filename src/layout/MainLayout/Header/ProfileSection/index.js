@@ -121,10 +121,15 @@ const ProfileSection = () => {
                                                     Johne Doe
                                                 </Typography>
                                             </Stack>
-                                            <Typography variant="subtitle1" sx={{ fontWeight: 400, fontSize:'0.875rem',color:'rgb(99, 115, 129)'}}>Administrator</Typography>
+                                            <Typography
+                                                variant="subtitle1"
+                                                sx={{ fontWeight: 400, fontSize: '0.875rem', color: 'rgb(99, 115, 129)' }}
+                                            >
+                                                Administrator
+                                            </Typography>
                                         </Stack>
                                     </Box>
-                                    <Box sx={{ p: '0px 16px 16px 16px'}}>
+                                    <Box sx={{ p: '0px 16px 16px 16px' }}>
                                         <List
                                             component="nav"
                                             sx={{

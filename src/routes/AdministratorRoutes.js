@@ -10,6 +10,17 @@ const Business = Loadable(lazy(() => import('views/business')));
 const CreateBusiness = Loadable(lazy(() => import('views/business/create')));
 const AddBusinessUnit = Loadable(lazy(() => import('views/business/AddBusinessUnit')));
 
+//User
+const UserDetails = Loadable(lazy(() => import('views/user/UserDetails')));
+const AddUser = Loadable(lazy(() => import('views/user/AddUser')));
+const Users = Loadable(lazy(() => import('views/user/users')));
+
+//partners
+const Customers = Loadable(lazy(() => import('views/partners/customers')));
+const Suppliers = Loadable(lazy(() => import('views/partners/suppliers')));
+//add customer or suppliers or both
+const AddCustomersOrSuppliers = Loadable(lazy(() => import('views/partners/AddCustomersOrSuppliers')));
+
 // ==============================|| MAIN ROUTING ||============================== //
 
 const AdministratorRoutes = {
@@ -30,6 +41,40 @@ const AdministratorRoutes = {
                 {
                     path: 'add-unit',
                     element: <AddBusinessUnit />
+                }
+            ]
+        },
+        {
+            path: 'user',
+            children: [
+                {
+                    path: 'details',
+                    element: <UserDetails />
+                },
+                {
+                    path: '',
+                    element: <Users />
+                },
+                {
+                    path: 'add',
+                    element: <AddUser />
+                }
+            ]
+        },
+        {
+            path: 'partners',
+            children: [
+                {
+                    path: 'customers',
+                    element: <Customers />
+                },
+                {
+                    path: 'suppliers',
+                    element: <Suppliers />
+                },
+                {
+                    path: 'add',
+                    element: <AddCustomersOrSuppliers />
                 }
             ]
         }

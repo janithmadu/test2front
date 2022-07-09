@@ -47,6 +47,8 @@ const AddBusinessUnit = () => {
 
     const [businessType, setBusinessType] = useState('ho');
 
+    const [defferentDetailsHO, setDefferentDetailsHO] = useState(false);
+
     const PostData = async () => {
         await createBusiness({
             name: businessName,
@@ -58,6 +60,10 @@ const AddBusinessUnit = () => {
         });
     };
 
+    const DefferentDetailsHOCheckBox = async () => {
+        console.log(!defferentDetailsHO);
+        setDefferentDetailsHO(!defferentDetailsHO);
+    };
     return (
         <>
             <Box
@@ -72,26 +78,26 @@ const AddBusinessUnit = () => {
                         case 'ho':
                             return (
                                 <Typography variant="h3" sx={{ textAlign: 'center' }}>
-                                    Your Head Office Details
+                                    Head Office Details
                                 </Typography>
                             );
                         case 'branch':
                             return (
                                 <Typography variant="h3" sx={{ textAlign: 'center' }}>
-                                    Your Branch Details
+                                    Branch Details
                                 </Typography>
                             );
                         case 'department':
                             return (
                                 <Typography variant="h3" sx={{ textAlign: 'center' }}>
-                                    Your Department Details
+                                    Department Details
                                 </Typography>
                             );
 
                         case 'team':
                             return (
                                 <Typography variant="h3" sx={{ textAlign: 'center' }}>
-                                    Your Team Details
+                                    Team Details
                                 </Typography>
                             );
 
@@ -122,48 +128,56 @@ const AddBusinessUnit = () => {
                         case 'ho':
                             return (
                                 <>
-                                    <FormControlLabel control={<Checkbox defaultChecked />} label="Defferent Details to Head Office ?" />
-
-                                    <TextField
-                                        fullWidth
-                                        label="Head Office Address 1"
-                                        variant="outlined"
-                                        margin="normal"
-                                        value={headOfficeAddress1}
-                                        onChange={(e) => setHeadOfficeAddress1(e.target.value)}
+                                    <FormControlLabel
+                                        control={<Checkbox onClick={DefferentDetailsHOCheckBox} />}
+                                        label="Defferent Details to Head Office ?"
                                     />
-                                    <TextField
-                                        fullWidth
-                                        label="Head Office Address 2"
-                                        variant="outlined"
-                                        margin="normal"
-                                        value={headOfficeAddress2}
-                                        onChange={(e) => setHeadOfficeAddress2(e.target.value)}
-                                    />
-                                    <TextField
-                                        fullWidth
-                                        label="City"
-                                        variant="outlined"
-                                        margin="normal"
-                                        value={headOfficeCity}
-                                        onChange={(e) => setHeadOfficeCity(e.target.value)}
-                                    />
-                                    <TextField
-                                        fullWidth
-                                        label="Phone number"
-                                        variant="outlined"
-                                        margin="normal"
-                                        value={headOfficePhoneNumber}
-                                        onChange={(e) => setHeadOfficePhoneNumer(e.target.value)}
-                                    />
-                                    <TextField
-                                        fullWidth
-                                        label="Email Address"
-                                        variant="outlined"
-                                        margin="normal"
-                                        value={headOfficeEmail}
-                                        onChange={(e) => setHeadOfficeEmail(e.target.value)}
-                                    />
+                                    {defferentDetailsHO ? (
+                                        <></>
+                                    ) : (
+                                        <>
+                                            <TextField
+                                                fullWidth
+                                                label="Head Office Address 1"
+                                                variant="outlined"
+                                                margin="normal"
+                                                value={headOfficeAddress1}
+                                                onChange={(e) => setHeadOfficeAddress1(e.target.value)}
+                                            />
+                                            <TextField
+                                                fullWidth
+                                                label="Head Office Address 2"
+                                                variant="outlined"
+                                                margin="normal"
+                                                value={headOfficeAddress2}
+                                                onChange={(e) => setHeadOfficeAddress2(e.target.value)}
+                                            />
+                                            <TextField
+                                                fullWidth
+                                                label="City"
+                                                variant="outlined"
+                                                margin="normal"
+                                                value={headOfficeCity}
+                                                onChange={(e) => setHeadOfficeCity(e.target.value)}
+                                            />
+                                            <TextField
+                                                fullWidth
+                                                label="Phone number"
+                                                variant="outlined"
+                                                margin="normal"
+                                                value={headOfficePhoneNumber}
+                                                onChange={(e) => setHeadOfficePhoneNumer(e.target.value)}
+                                            />
+                                            <TextField
+                                                fullWidth
+                                                label="Email Address"
+                                                variant="outlined"
+                                                margin="normal"
+                                                value={headOfficeEmail}
+                                                onChange={(e) => setHeadOfficeEmail(e.target.value)}
+                                            />
+                                        </>
+                                    )}
                                 </>
                             );
                         case 'branch':
@@ -226,12 +240,13 @@ const AddBusinessUnit = () => {
                                     />
                                     <FormControl fullWidth margin="normal">
                                         <InputLabel id="demo-simple-select-label">Business Unit</InputLabel>
-                                        <Select labelId="demo-simple-select-label" 
-                                        id="demo-simple-select" 
-                                        label="Business Unit"
-                                         value={departmentValue}
-                                         onChange={(e) => setDepartmentValue(e.target.value)}
-                                         >
+                                        <Select
+                                            labelId="demo-simple-select-label"
+                                            id="demo-simple-select"
+                                            label="Business Unit"
+                                            value={departmentValue}
+                                            onChange={(e) => setDepartmentValue(e.target.value)}
+                                        >
                                             <MenuItem value="kandy branch">Kandy branch</MenuItem>
                                             <MenuItem value="hr">HR</MenuItem>
                                             <MenuItem value="Finance">Finance</MenuItem>
@@ -253,12 +268,13 @@ const AddBusinessUnit = () => {
                                     />
                                     <FormControl fullWidth margin="normal">
                                         <InputLabel id="demo-simple-select-label">Business Unit</InputLabel>
-                                        <Select labelId="demo-simple-select-label"
-                                         id="demo-simple-select" 
-                                         label="Business Unit"
-                                          value={teamValue}
-                                         onChange={(e) => setTeamValue(e.target.value)}
-                                         >
+                                        <Select
+                                            labelId="demo-simple-select-label"
+                                            id="demo-simple-select"
+                                            label="Business Unit"
+                                            value={teamValue}
+                                            onChange={(e) => setTeamValue(e.target.value)}
+                                        >
                                             <MenuItem value="kandy branch">Kandy branch</MenuItem>
                                             <MenuItem value="hr">HR</MenuItem>
                                             <MenuItem value="Finance">Finance</MenuItem>

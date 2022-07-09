@@ -13,10 +13,14 @@ import { useTheme } from '@mui/material/styles';
 const CreateBusiness = () => {
     const theme = useTheme();
 
+    const [registrationNumber, setRegistrationNumber] = useState('');
     const [businessName, setBusinessName] = useState('');
-    const [businessAddress, setBusinessAddress] = useState('');
+    const [businessAddress1, setBusinessAddress1] = useState('');
+    const [businessAddress2, setBusinessAddress2] = useState('');
+    const [city, setCity] = useState('');
     const [email, setEmail] = useState('');
-    const [contactName, setContactName] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [website, setWebsite] = useState('');
 
     const PostData = async () => {
         await createBusiness({
@@ -38,7 +42,17 @@ const CreateBusiness = () => {
                     margin: 'auto'
                 }}
             >
-                <Typography variant="h3">Create Business</Typography>
+                <Typography variant="h3" sx={{ textAlign: 'center' }}>
+                    Business Details
+                </Typography>
+                <TextField
+                    fullWidth
+                    id="fullWidth"
+                    label="Registrstion Number"
+                    variant="outlined"
+                    margin="normal"
+                    onChange={(e) => setRegistrationNumber(e.target.value)}
+                />
                 <TextField
                     fullWidth
                     id="fullWidth"
@@ -50,31 +64,61 @@ const CreateBusiness = () => {
                 <TextField
                     fullWidth
                     id="fullWidth"
-                    label="Business Address"
+                    label="Business Address 1"
                     variant="outlined"
                     margin="normal"
-                    onChange={(e) => setBusinessAddress(e.target.value)}
+                    onChange={(e) => setBusinessAddress1(e.target.value)}
                 />
                 <TextField
                     fullWidth
                     id="fullWidth"
-                    label="Contact Name"
+                    label="Business Address 2"
                     variant="outlined"
                     margin="normal"
-                    onChange={(e) => setContactName(e.target.value)}
+                    onChange={(e) => setBusinessAddress2(e.target.value)}
                 />
                 <TextField
                     fullWidth
                     id="fullWidth"
-                    label="Email Address"
+                    label="City"
+                    variant="outlined"
+                    margin="normal"
+                    onChange={(e) => setCity(e.target.value)}
+                />
+
+                <TextField
+                    fullWidth
+                    id="fullWidth"
+                    label="Phone Number"
+                    variant="outlined"
+                    margin="normal"
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                />
+
+                <TextField
+                    fullWidth
+                    id="fullWidth"
+                    label="Email"
                     variant="outlined"
                     margin="normal"
                     onChange={(e) => setEmail(e.target.value)}
                 />
 
-                <Box sx={{ textAlign: 'right' }}>
-                    <Button variant="contained" sx={{ borderRadius: '6px' }} onClick={PostData}>
-                        Create
+                <TextField
+                    fullWidth
+                    id="fullWidth"
+                    label="Website"
+                    variant="outlined"
+                    margin="normal"
+                    onChange={(e) => setWebsite(e.target.value)}
+                />
+
+                <Box sx={{ textAlign: 'right', marginTop: '10px' }}>
+                    <Button variant="outlined" sx={{ borderRadius: '6px' }} onClick={PostData}>
+                        cancel
+                    </Button>
+                    <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '5px' }}>
+                        save
                     </Button>
                 </Box>
             </Box>
