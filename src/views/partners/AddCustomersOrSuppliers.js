@@ -52,12 +52,12 @@ const AddCustomersOrSuppliers = () => {
         <>
             <Box
                 sx={{
-                    padding: { xs: '10px', md: '0px 130px 0px 130px' },
+                    padding: { xs: '10px', md: '0px 30px 0px 30px' },
                     backgroundColor: '#fff',
                     margin: 'auto'
                 }}
             >
-                <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '20px' }}>
+                <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '10px' }}>
                     Bussiness Partners Details
                 </Typography>
                 <Box sx={{ textAlign: 'center' }}>
@@ -176,7 +176,7 @@ const AddCustomersOrSuppliers = () => {
                                     <Button variant="outlined" sx={{ borderRadius: '6px' }} onClick={PostData}>
                                         cancel
                                     </Button>
-                                    <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '5px' }}>
+                                    <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}>
                                         add
                                     </Button>
                                 </Box>

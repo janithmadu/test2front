@@ -81,7 +81,6 @@ const FirebaseLogin = ({ ...others }) => {
 
     return (
         <>
-          
             <Formik
                 initialValues={{
                     email: '',
@@ -202,7 +201,6 @@ const FirebaseLogin = ({ ...others }) => {
                                 </Button>
                             </AnimateButton>
                         </Box>
-                       
                     </form>
                 )}
             </Formik>

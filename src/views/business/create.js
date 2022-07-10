@@ -117,7 +117,7 @@ const CreateBusiness = () => {
                     <Button variant="outlined" sx={{ borderRadius: '6px' }} onClick={PostData}>
                         cancel
                     </Button>
-                    <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '5px' }}>
+                    <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}>
                         save
                     </Button>
                 </Box>

@@ -21,6 +21,16 @@ const Suppliers = Loadable(lazy(() => import('views/partners/suppliers')));
 //add customer or suppliers or both
 const AddCustomersOrSuppliers = Loadable(lazy(() => import('views/partners/AddCustomersOrSuppliers')));
 
+//documents
+const Category = Loadable(lazy(() => import('views/document/category')));
+const AddCategory = Loadable(lazy(() => import('views/document/category/AddCategory')));
+const Collection = Loadable(lazy(() => import('views/document/collections')));
+const AddCollection = Loadable(lazy(() => import('views/document/collections/AddCollection')));
+//form
+const Document = Loadable(lazy(() => import('views/document')));
+//sample form
+const SampleDocuments = Loadable(lazy(() => import('views/document/SampleDocuments')));
+
 //Protect Router
 import ProtectRouter from './ProtectRouter';
 
@@ -78,6 +88,35 @@ const AdministratorRoutes = {
                 {
                     path: 'add',
                     element: <AddCustomersOrSuppliers />
+                }
+            ]
+        },
+        {
+            path: 'documents',
+            children: [
+                {
+                    path: 'category',
+                    element: <Category />
+                },
+                {
+                    path: 'category/add',
+                    element: <AddCategory />
+                },
+                {
+                    path: 'collection',
+                    element: <Collection />
+                },
+                {
+                    path: 'collection/add',
+                    element: <AddCollection />
+                },
+                {
+                    path: '',
+                    element: <Document />
+                },
+                {
+                    path: 'sample-documents',
+                    element: <SampleDocuments />
                 }
             ]
         }

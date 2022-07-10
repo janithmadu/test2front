@@ -21,6 +21,7 @@ import {
 } from '@mui/material';
 import { createBusiness } from '../../services/api';
 import { useTheme } from '@mui/material/styles';
+import FormBox from 'ui-component/box/FormBox';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
@@ -50,128 +51,125 @@ const AddUser = () => {
     };
 
     return (
-        <>
-            <Box
-                sx={{
-                    padding: { xs: '10px', md: '0px 130px 0px 130px' },
-                    backgroundColor: '#fff',
-                    margin: 'auto'
-                }}
-            >
-                <Typography variant="h3" sx={{ textAlign: 'center' }}>
-                    Add users
-                </Typography>
-                <TextField
-                    fullWidth
-                    id="fullWidth"
-                    label="First Name"
-                    variant="outlined"
-                    margin="normal"
-                    onChange={(e) => setFirstName(e.target.value)}
-                />
-                <TextField
-                    fullWidth
-                    id="fullWidth"
-                    label="Last Name"
-                    variant="outlined"
-                    margin="normal"
-                    onChange={(e) => setLastName(e.target.value)}
-                />
-                <TextField
-                    fullWidth
-                    id="fullWidth"
-                    label="Email"
-                    variant="outlined"
-                    margin="normal"
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                <TextField
-                    fullWidth
-                    id="fullWidth"
-                    label="Phone number"
-                    variant="outlined"
-                    margin="normal"
-                    onChange={(e) => setPhoneNumber(e.target.value)}
-                />
-                <FormControl fullWidth margin="normal">
-                    <InputLabel id="demo-simple-select-label">Business Unit</InputLabel>
-                    <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        label="Business Unit"
-                        value={businessUnit}
-                        onChange={(e) => setBusinessUnit(e.target.value)}
-                    >
-                        <MenuItem value="kandy branch">Kandy branch</MenuItem>
-                        <MenuItem value="hr">HR</MenuItem>
-                        <MenuItem value="Finance">Finance</MenuItem>
-                    </Select>
-                </FormControl>
+        <FormBox>
+            <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '20px' }}>
+                Add users
+            </Typography>
+            <Grid container spacing={2}>
+                <Grid item xs={12} md={6}>
+                    <TextField
+                        fullWidth
+                        label="First Name"
+                        variant="outlined"
+                        margin="normal"
+                        onChange={(e) => setFirstName(e.target.value)}
+                    />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                    <TextField
+                        fullWidth
+                        label="Last Name"
+                        variant="outlined"
+                        margin="normal"
+                        onChange={(e) => setLastName(e.target.value)}
+                    />
+                </Grid>
+            </Grid>
 
-                <FormControl fullWidth margin="normal">
-                    <InputLabel id="demo-simple-select-label">Department / Team</InputLabel>
-                    <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        label="Business Unit"
-                        value={departmentAndTeamUnit}
-                        onChange={(e) => setDepartmentAndTeamUnit(e.target.value)}
-                    >
-                        <MenuItem value="kandy branch">Kandy branch</MenuItem>
-                        <MenuItem value="hr">HR</MenuItem>
-                        <MenuItem value="Finance">Finance</MenuItem>
-                    </Select>
-                </FormControl>
-                <TextField
-                    fullWidth
-                    id="fullWidth"
-                    label="Designation"
-                    variant="outlined"
-                    margin="normal"
-                    onChange={(e) => setDesignation(e.target.value)}
-                />
-                <FormControl fullWidth margin="normal">
-                    <InputLabel id="demo-simple-select-label">Role</InputLabel>
-                    <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        label="Business Unit"
-                        value={role}
-                        onChange={(e) => setRole(e.target.value)}
-                    >
-                        <MenuItem value="kandy branch">Project Manager</MenuItem>
-                        <MenuItem value="hr">Manager</MenuItem>
-                        <MenuItem value="Finance">CEO</MenuItem>
-                    </Select>
-                </FormControl>
-                <TextField
-                    fullWidth
-                    id="fullWidth"
-                    label="password"
-                    variant="outlined"
-                    margin="normal"
-                    onChange={(e) => setPassword(e.target.value)}
-                />
+            <TextField
+                fullWidth
+                id="fullWidth"
+                label="Email"
+                variant="outlined"
+                margin="normal"
+                onChange={(e) => setEmail(e.target.value)}
+            />
+            <TextField
+                fullWidth
+                id="fullWidth"
+                label="Phone number"
+                variant="outlined"
+                margin="normal"
+                onChange={(e) => setPhoneNumber(e.target.value)}
+            />
+            <FormControl fullWidth margin="normal">
+                <InputLabel id="demo-simple-select-label">Business Unit</InputLabel>
+                <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    label="Business Unit"
+                    value={businessUnit}
+                    onChange={(e) => setBusinessUnit(e.target.value)}
+                >
+                    <MenuItem value="kandy branch">Kandy branch</MenuItem>
+                    <MenuItem value="hr">HR</MenuItem>
+                    <MenuItem value="Finance">Finance</MenuItem>
+                </Select>
+            </FormControl>
 
-                <TextField
-                    fullWidth
-                    id="fullWidth"
-                    label=" Confirm Password"
-                    variant="outlined"
-                    margin="normal"
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                />
+            <FormControl fullWidth margin="normal">
+                <InputLabel id="demo-simple-select-label">Department / Team</InputLabel>
+                <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    label="Business Unit"
+                    value={departmentAndTeamUnit}
+                    onChange={(e) => setDepartmentAndTeamUnit(e.target.value)}
+                >
+                    <MenuItem value="kandy branch">Kandy branch</MenuItem>
+                    <MenuItem value="hr">HR</MenuItem>
+                    <MenuItem value="Finance">Finance</MenuItem>
+                </Select>
+            </FormControl>
+            <TextField
+                fullWidth
+                id="fullWidth"
+                label="Designation"
+                variant="outlined"
+                margin="normal"
+                onChange={(e) => setDesignation(e.target.value)}
+            />
+            <FormControl fullWidth margin="normal">
+                <InputLabel id="demo-simple-select-label">Role</InputLabel>
+                <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    label="Business Unit"
+                    value={role}
+                    onChange={(e) => setRole(e.target.value)}
+                >
+                    <MenuItem value="kandy branch">Project Manager</MenuItem>
+                    <MenuItem value="hr">Manager</MenuItem>
+                    <MenuItem value="Finance">CEO</MenuItem>
+                </Select>
+            </FormControl>
+            <TextField
+                fullWidth
+                id="fullWidth"
+                label="password"
+                variant="outlined"
+                margin="normal"
+                onChange={(e) => setPassword(e.target.value)}
+            />
 
-                <Box sx={{ textAlign: 'right', marginTop: '10px' }}>
-                    <Button variant="outlined" sx={{ borderRadius: '6px' }} onClick={PostData}>
-                        cancel
-                    </Button>
-                    <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '5px' }}>
-                        add
-                    </Button>
-                </Box>
+            <TextField
+                fullWidth
+                id="fullWidth"
+                label=" Confirm Password"
+                variant="outlined"
+                margin="normal"
+                onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+
+            <Box sx={{ textAlign: 'right', marginTop: '10px' }}>
+                <Button variant="outlined" sx={{ borderRadius: '6px' }} onClick={PostData}>
+                    cancel
+                </Button>
+                <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}>
+                    add
+                </Button>
             </Box>
-        </>
+        </FormBox>
     );
 };
 

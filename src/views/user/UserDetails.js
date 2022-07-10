@@ -57,7 +57,7 @@ const UserDetails = () => {
                     margin: 'auto'
                 }}
             >
-                <Typography variant="h3" sx={{ textAlign: 'center' }}>
+                <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '20px' }}>
                     Your Details
                 </Typography>
                 <TextField
@@ -152,7 +152,7 @@ const UserDetails = () => {
                     <Button variant="outlined" sx={{ borderRadius: '6px' }} onClick={PostData}>
                         cancel
                     </Button>
-                    <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '5px' }}>
+                    <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}>
                         save
                     </Button>
                 </Box>

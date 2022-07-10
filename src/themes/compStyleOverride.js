@@ -54,18 +54,19 @@ export default function componentStyleOverrides(theme) {
                     paddingTop: '10px',
                     paddingBottom: '10px',
                     '&.Mui-selected': {
-                        color: theme.menuSelected,
-                        backgroundColor: theme.menuSelectedBack,
+                        color: '#fff',
+                        backgroundColor: '#212121',
                         '&:hover': {
-                            backgroundColor: theme.gray500
+                            backgroundColor: '#212121',
+                            color: '#fff'
                         },
                         '& .MuiListItemIcon-root': {
-                            color: theme.menuSelected
+                            color: '#fff'
                         }
                     },
                     '&:hover': {
                         backgroundColor: theme.gray100,
-                        color: theme.menuSelected,
+                        color: theme.gray100,
                         '& .MuiListItemIcon-root': {
                             color: theme.gray900
                         }
@@ -116,7 +117,7 @@ export default function componentStyleOverrides(theme) {
                 },
                 input: {
                     fontWeight: 500,
-                    background: bgColor,
+                    background: '#fff',
                     padding: '15.5px 14px',
                     borderRadius: `${theme?.customization?.borderRadius}px`,
                     '&.MuiInputBase-inputSizeSmall': {

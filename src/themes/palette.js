@@ -44,7 +44,7 @@ export default function themePalette(theme) {
             main: theme.colors?.successMain,
             dark: theme.colors?.successDark
         },
-          blue: {
+        blue: {
             light: theme.colors?.primaryLight,
             main: theme.colors?.primaryMain,
             dark: theme.colors?.primaryDark,

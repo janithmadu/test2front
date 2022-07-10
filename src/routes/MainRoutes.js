@@ -10,7 +10,6 @@ const DashboardDefault = Loadable(lazy(() => import('views/dashboard/Default')))
 //Protect Router
 import ProtectRouter from './ProtectRouter';
 
-
 // ==============================|| MAIN ROUTING ||============================== //
 
 const MainRoutes = {
