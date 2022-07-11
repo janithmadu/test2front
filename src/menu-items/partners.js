@@ -1,9 +1,9 @@
 // assets
-import { IconTruck, IconCirclePlus, IconUserCheck } from '@tabler/icons';
+import { IconBox, IconCirclePlus, IconUserCheck } from '@tabler/icons';
 
 // constant
 const icons = {
-    IconTruck,
+    IconBox,
     IconCirclePlus,
     IconUserCheck
 };
@@ -17,7 +17,7 @@ const partners = {
     children: [
         {
             id: 'partners1',
-            title: 'customers',
+            title: 'Customers',
             type: 'item',
             url: '/administrator/partners/customers',
             icon: icons.IconUserCheck,
@@ -25,20 +25,13 @@ const partners = {
         },
         {
             id: 'partners2',
-            title: 'suppliers',
+            title: 'Suppliers',
             type: 'item',
             url: '/administrator/partners/suppliers',
-            icon: icons.IconTruck,
-            breadcrumbs: true
-        },
-        {
-            id: 'partners3',
-            title: 'Add partners',
-            type: 'item',
-            url: '/administrator/partners/add',
-            icon: icons.IconCirclePlus,
+            icon: icons.IconBox,
             breadcrumbs: true
         }
+      
     ]
 };
 

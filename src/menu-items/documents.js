@@ -35,7 +35,7 @@ const documents = {
 
         {
             id: 'documents3',
-            title: 'documents',
+            title: 'Documents',
             type: 'item',
             url: '/administrator/documents',
             icon: icons.IconFileDescription,

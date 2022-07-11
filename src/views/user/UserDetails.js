@@ -100,6 +100,7 @@ const UserDetails = () => {
                         label="Business Unit"
                         value={businessUnit}
                         onChange={(e) => setBusinessUnit(e.target.value)}
+                        disabled                    
                     >
                         <MenuItem value="kandy branch">Kandy branch</MenuItem>
                         <MenuItem value="hr">HR</MenuItem>
@@ -115,6 +116,7 @@ const UserDetails = () => {
                         label="Business Unit"
                         value={departmentAndTeamUnit}
                         onChange={(e) => setDepartmentAndTeamUnit(e.target.value)}
+                        disabled
                     >
                         <MenuItem value="kandy branch">Kandy branch</MenuItem>
                         <MenuItem value="hr">HR</MenuItem>
@@ -127,13 +129,14 @@ const UserDetails = () => {
                     label="Designation"
                     variant="outlined"
                     margin="normal"
+                    disabled
                     onChange={(e) => setDesignation(e.target.value)}
                 />
 
                 <TextField
                     fullWidth
                     id="fullWidth"
-                    label="password"
+                    label="Password"
                     variant="outlined"
                     margin="normal"
                     onChange={(e) => setPassword(e.target.value)}

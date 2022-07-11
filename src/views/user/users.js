@@ -40,6 +40,14 @@ const Users = () => {
                         </Typography>
                     </Box>
                 </Grid>
+                  <Grid item xs={12} md={12}>
+                    <Box sx={{ textAlign: 'right', marginTop: '20px' }}>
+                        <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}>
+                            Add User
+                        </Button>
+                    </Box>
+                </Grid>
+
                 <Grid
                     item
                     xs={12}
