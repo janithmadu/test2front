@@ -7,7 +7,7 @@ import menuItem from 'menu-items';
 
 // ==============================|| SIDEBAR MENU LIST ||============================== //
 
-const MenuList = () => {
+const MenuLists = () => {
     const navItems = menuItem.administratorItems.map((item) => {
         switch (item.type) {
             case 'group':
@@ -24,4 +24,4 @@ const MenuList = () => {
     return <>{navItems}</>;
 };
 
-export default MenuList;
+export default MenuLists;

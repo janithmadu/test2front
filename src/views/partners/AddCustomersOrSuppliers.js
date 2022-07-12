@@ -17,10 +17,12 @@ import {
     Checkbox,
     InputLabel,
     MenuItem,
-    Select
+    Select,
+    FormGroup
 } from '@mui/material';
 import { createBusiness } from '../../services/api';
 import { useTheme } from '@mui/material/styles';
+import FormBox from 'ui-component/box/FormBox';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
@@ -50,30 +52,16 @@ const AddCustomersOrSuppliers = () => {
 
     return (
         <>
-            <Box
-                sx={{
-                    padding: { xs: '10px', md: '0px 30px 0px 30px' },
-                    backgroundColor: '#fff',
-                    margin: 'auto'
-                }}
-            >
-                <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '10px' }}>
+            <FormBox>
+                <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '15px' }}>
                     Bussiness Partners Details
                 </Typography>
                 <Box sx={{ textAlign: 'center' }}>
-                    <FormControl sx={{ marginTop: '20px' }}>
-                        <RadioGroup
-                            row
-                            aria-labelledby="demo-row-radio-buttons-group-label"
-                            name="row-radio-buttons-group"
-                            defaultValue="customer"
-                            onChange={(e) => setPartnerType(e.target.value)}
-                        >
-                            <FormControlLabel value="customer" control={<Radio />} label="Customer" />
-                            <FormControlLabel value="suppilers" control={<Radio />} label="Suppilers" />
-                            <FormControlLabel value="both" control={<Radio />} label="Both" />
-                        </RadioGroup>
-                    </FormControl>
+                    <FormGroup row sx={{ justifyContent: 'center' }}>
+                        <FormControlLabel control={<Checkbox />} label="Customer" />
+                        <FormControlLabel control={<Checkbox />} label="Suppilers" />
+                        <FormControlLabel control={<Checkbox />} label="other" />
+                    </FormGroup>
                 </Box>
 
                 <TextField
@@ -183,7 +171,7 @@ const AddCustomersOrSuppliers = () => {
                             );
                     }
                 })()}
-            </Box>
+            </FormBox>
         </>
     );
 };

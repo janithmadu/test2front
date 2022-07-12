@@ -4,7 +4,7 @@ import { styled } from '@mui/material/styles';
 // ==============================|| AUTHENTICATION 1 WRAPPER ||============================== //
 
 const AuthWrapper1 = styled('div')(({ theme }) => ({
-    backgroundColor: '#e7e7e7a6',
+    backgroundColor: '#fff',
     minHeight: '100vh'
 }));
 

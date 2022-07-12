@@ -7,8 +7,8 @@ import menuItem from 'menu-items';
 
 // ==============================|| SIDEBAR MENU LIST ||============================== //
 
-const MenuList = () => {
-    const navItems = menuItem.administratorItems.map((item) => {
+const ManagerMenuList = () => {
+    const navItems = menuItem.managerItems.map((item) => {
         switch (item.type) {
             case 'group':
                 return <NavGroup key={item.id} item={item} />;
@@ -24,4 +24,4 @@ const MenuList = () => {
     return <>{navItems}</>;
 };
 
-export default MenuList;
+export default ManagerMenuList;

@@ -156,7 +156,7 @@ const ProfileSection = () => {
                                                 </ListItemIcon>
                                                 <ListItemText primary={<Typography variant="body2">Account Settings</Typography>} />
                                             </ListItemButton>
-                                           
+
                                             <ListItemButton
                                                 sx={{ borderRadius: `${customization.borderRadius}px` }}
                                                 selected={selectedIndex === 4}

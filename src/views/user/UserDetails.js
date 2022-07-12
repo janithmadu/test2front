@@ -100,7 +100,7 @@ const UserDetails = () => {
                         label="Business Unit"
                         value={businessUnit}
                         onChange={(e) => setBusinessUnit(e.target.value)}
-                        disabled                    
+                        disabled
                     >
                         <MenuItem value="kandy branch">Kandy branch</MenuItem>
                         <MenuItem value="hr">HR</MenuItem>

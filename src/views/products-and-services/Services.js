@@ -9,10 +9,11 @@ import { useTheme } from '@mui/material/styles';
 
 import { Grid, Box, IconButton, Button } from '@mui/material';
 import { IconSettings, IconPlus } from '@tabler/icons';
+import { Link } from 'react-router-dom';
 
 // ==============================|| BUSINESS PAGE ||============================== //
 
-const Collection = () => {
+const Services = () => {
     const theme = useTheme();
 
     return (
@@ -20,20 +21,22 @@ const Collection = () => {
             <Grid container spacing={2}>
                 <Grid item xs={12} md={12}>
                     <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '20px', margin: 'auto' }}>
-                        Document Collection
+                        Services
                     </Typography>
                 </Grid>
                 <Grid item xs={12} md={12}>
                     <Box sx={{ textAlign: 'right', marginTop: '20px' }}>
-                        <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}>
-                            Add Collection
-                        </Button>
+                        <Link to={`add`}>
+                            <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}>
+                                Add Services
+                            </Button>
+                        </Link>
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <SubCard>
                         <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
-                            Employee Registration
+                            Transport Request
                         </Typography>
                         <Typography variant="body2">Administration</Typography>
                     </SubCard>
@@ -41,7 +44,7 @@ const Collection = () => {
                 <Grid item xs={12} md={4}>
                     <SubCard>
                         <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
-                            Customer Payments
+                            Account Payble
                         </Typography>
 
                         <Typography variant="body2">Finance</Typography>
@@ -50,7 +53,7 @@ const Collection = () => {
                 <Grid item xs={12} md={4}>
                     <SubCard>
                         <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
-                            Employee Allowances
+                            Employee Expenses Request
                         </Typography>
 
                         <Typography variant="body2">Finance</Typography>
@@ -59,7 +62,7 @@ const Collection = () => {
                 <Grid item xs={12} md={4}>
                     <SubCard>
                         <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
-                            sahan prinerts
+                            Budget Request
                         </Typography>
 
                         <Typography variant="body2">Finance</Typography>
@@ -70,4 +73,4 @@ const Collection = () => {
     );
 };
 
-export default Collection;
+export default Services;

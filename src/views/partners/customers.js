@@ -9,6 +9,7 @@ import { useTheme } from '@mui/material/styles';
 
 import { Grid, Box, IconButton, Button } from '@mui/material';
 import { IconSettings, IconPlus } from '@tabler/icons';
+import { Link } from 'react-router-dom';
 
 // ==============================|| BUSINESS PAGE ||============================== //
 
@@ -40,11 +41,13 @@ const Customers = () => {
                         </Typography>
                     </Box>
                 </Grid>
-                    <Grid item xs={12} md={12}>
+                <Grid item xs={12} md={12}>
                     <Box sx={{ textAlign: 'right', marginTop: '20px' }}>
-                        <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}>
-                            Add Partners
-                        </Button>
+                        <Link to={`../add`}>
+                            <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}>
+                                Add Partners
+                            </Button>
+                        </Link>
                     </Box>
                 </Grid>
 

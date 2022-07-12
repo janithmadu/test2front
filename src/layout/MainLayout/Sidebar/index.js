@@ -14,6 +14,9 @@ import LogoSection from '../LogoSection';
 import MenuCard from './MenuCard';
 import { drawerWidth } from 'store/constant';
 
+import AdministratorMenuList from './MenuList/AdministratorMenuList';
+import ManagerMenuList from './MenuList/ManagerMenuList';
+
 // ==============================|| SIDEBAR DRAWER ||============================== //
 
 const Sidebar = ({ drawerOpen, drawerToggle, window }) => {
@@ -47,6 +50,50 @@ const Sidebar = ({ drawerOpen, drawerToggle, window }) => {
         </>
     );
 
+    const administratorDrawer = (
+        <>
+            <BrowserView>
+                <PerfectScrollbar
+                    component="div"
+                    style={{
+                        height: !matchUpMd ? 'calc(100vh - 56px)' : 'calc(100vh - 88px)',
+                        paddingLeft: '16px',
+                        paddingRight: '16px'
+                    }}
+                >
+                    <AdministratorMenuList />
+                </PerfectScrollbar>
+            </BrowserView>
+            <MobileView>
+                <Box sx={{ px: 2 }}>
+                    <AdministratorMenuList />
+                </Box>
+            </MobileView>
+        </>
+    );
+
+    const managerDrawer = (
+        <>
+            <BrowserView>
+                <PerfectScrollbar
+                    component="div"
+                    style={{
+                        height: !matchUpMd ? 'calc(100vh - 56px)' : 'calc(100vh - 88px)',
+                        paddingLeft: '16px',
+                        paddingRight: '16px'
+                    }}
+                >
+                    <ManagerMenuList />
+                </PerfectScrollbar>
+            </BrowserView>
+            <MobileView>
+                <Box sx={{ px: 2 }}>
+                    <ManagerMenuList />
+                </Box>
+            </MobileView>
+        </>
+    );
+
     const container = window !== undefined ? () => window.document.body : undefined;
 
     return (
@@ -71,7 +118,16 @@ const Sidebar = ({ drawerOpen, drawerToggle, window }) => {
                 ModalProps={{ keepMounted: true }}
                 color="inherit"
             >
-                {drawer}
+                {(() => {
+                    switch ('admin') {
+                        case 'admin':
+                            return administratorDrawer;
+                        case 'manager':
+                            return managerDrawer;
+                        default:
+                            return drawer;
+                    }
+                })()}
             </Drawer>
         </Box>
     );

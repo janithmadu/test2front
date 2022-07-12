@@ -33,9 +33,9 @@ const users = {
         },
         {
             id: 'user3',
-            title: 'Add Users',
+            title: 'Role',
             type: 'item',
-            url: '/administrator/user/add',
+            url: '/administrator/user/role',
             icon: icons.IconUserPlus,
             breadcrumbs: true
         }

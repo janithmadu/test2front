@@ -129,7 +129,7 @@ const AddBusinessUnit = () => {
                             return (
                                 <>
                                     <FormControlLabel
-                                        control={<Checkbox onClick={DefferentDetailsHOCheckBox}   />}
+                                        control={<Checkbox onClick={DefferentDetailsHOCheckBox} />}
                                         label="Defferent Details to Head Office ?"
                                     />
                                     {!defferentDetailsHO ? (

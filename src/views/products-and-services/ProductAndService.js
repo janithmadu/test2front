@@ -12,34 +12,12 @@ import { IconSettings, IconPlus } from '@tabler/icons';
 
 // ==============================|| BUSINESS PAGE ||============================== //
 
-const Suppliers = () => {
+const ProductAndService = () => {
     const theme = useTheme();
 
     return (
         <>
             <Grid container spacing={2}>
-                <Grid item xs={12} md={12}>
-                    <Box
-                        sx={{
-                            background: theme.palette.primary.main,
-                            padding: '30px',
-                            borderRadius: '12px'
-                        }}
-                    >
-                        <Typography variant="h3" color="white">
-                            z tech
-                        </Typography>
-                        <Typography variant="body2" color="white">
-                            Contact Name - Avishka Devinda
-                        </Typography>
-                        <Typography variant="body2" color="white">
-                            Business Address - 23/5 road, kandy, srilanka
-                        </Typography>
-                        <Typography variant="body2" color="white">
-                            Email - test@mail.com
-                        </Typography>
-                    </Box>
-                </Grid>
                 <Grid
                     item
                     xs={12}
@@ -55,36 +33,36 @@ const Suppliers = () => {
                 <Grid item xs={12} md={4}>
                     <SubCard>
                         <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
-                            Damro
+                            Transport Request
                         </Typography>
-                        <Typography variant="body2">Colombo</Typography>
+                        <Typography variant="body2">Administration</Typography>
                     </SubCard>
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <SubCard>
                         <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
-                            Keels
+                            Account Payble
                         </Typography>
 
-                        <Typography variant="body2">Kandy</Typography>
+                        <Typography variant="body2">Finance</Typography>
                     </SubCard>
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <SubCard>
                         <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
-                            Singers
+                            Employee Expenses Request
                         </Typography>
 
-                        <Typography variant="body2">Galle</Typography>
+                        <Typography variant="body2">Finance</Typography>
                     </SubCard>
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <SubCard>
                         <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
-                            Abans
+                            Budget Request
                         </Typography>
 
-                        <Typography variant="body2">Nugegoda</Typography>
+                        <Typography variant="body2">Finance</Typography>
                     </SubCard>
                 </Grid>
             </Grid>
@@ -92,4 +70,4 @@ const Suppliers = () => {
     );
 };
 
-export default Suppliers;
+export default ProductAndService;

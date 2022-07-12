@@ -14,10 +14,11 @@ const AddBusinessUnit = Loadable(lazy(() => import('views/business/AddBusinessUn
 const UserDetails = Loadable(lazy(() => import('views/user/UserDetails')));
 const AddUser = Loadable(lazy(() => import('views/user/AddUser')));
 const Users = Loadable(lazy(() => import('views/user/users')));
+const UserRole = Loadable(lazy(() => import('views/user/UserRole')));
 
 //partners
 const Customers = Loadable(lazy(() => import('views/partners/customers')));
-const Suppliers = Loadable(lazy(() => import('views/partners/suppliers')));
+const Vendors = Loadable(lazy(() => import('views/partners/vendors')));
 //add customer or suppliers or both
 const AddCustomersOrSuppliers = Loadable(lazy(() => import('views/partners/AddCustomersOrSuppliers')));
 
@@ -30,6 +31,14 @@ const AddCollection = Loadable(lazy(() => import('views/document/collections/Add
 const Document = Loadable(lazy(() => import('views/document')));
 //sample form
 const SampleDocuments = Loadable(lazy(() => import('views/document/SampleDocuments')));
+
+//Product And Service
+const ProductAndService = Loadable(lazy(() => import('views/products-and-services/ProductAndService')));
+const ProductAndServiceCategory = Loadable(lazy(() => import('views/products-and-services/category/ProductAndServiceCategory')));
+const AddProductAndServiceCategory = Loadable(lazy(() => import('views/products-and-services/category/AddProductAndServiceCategory')));
+const Products = Loadable(lazy(() => import('views/products-and-services/Products')));
+const Services = Loadable(lazy(() => import('views/products-and-services/Services')));
+const AddProductAndService = Loadable(lazy(() => import('views/products-and-services/AddProductAndService')));
 
 //Protect Router
 import ProtectRouter from './ProtectRouter';
@@ -71,6 +80,10 @@ const AdministratorRoutes = {
                 {
                     path: 'add',
                     element: <AddUser />
+                },
+                 {
+                    path: 'role',
+                    element: <UserRole />
                 }
             ]
         },
@@ -82,8 +95,8 @@ const AdministratorRoutes = {
                     element: <Customers />
                 },
                 {
-                    path: 'suppliers',
-                    element: <Suppliers />
+                    path: 'vendors',
+                    element: <Vendors />
                 },
                 {
                     path: 'add',
@@ -117,6 +130,35 @@ const AdministratorRoutes = {
                 {
                     path: 'sample-documents',
                     element: <SampleDocuments />
+                }
+            ]
+        },
+        {
+            path: 'products-and-services',
+            children: [
+                {
+                    path: 'products',
+                    element: <Products />
+                },
+                {
+                    path: 'products/add',
+                    element: <AddProductAndService />
+                },
+                {
+                    path: 'services',
+                    element: <Services />
+                },
+                {
+                    path: 'services/add',
+                    element: <AddProductAndService />
+                },
+                {
+                    path: 'category',
+                    element: <ProductAndServiceCategory />
+                },
+                {
+                    path: 'category/add',
+                    element: <AddProductAndServiceCategory />
                 }
             ]
         }

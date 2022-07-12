@@ -9,11 +9,10 @@ import { useTheme } from '@mui/material/styles';
 
 import { Grid, Box, IconButton, Button } from '@mui/material';
 import { IconSettings, IconPlus } from '@tabler/icons';
-import { Link } from 'react-router-dom';
 
 // ==============================|| BUSINESS PAGE ||============================== //
 
-const Users = () => {
+const Vendors = () => {
     const theme = useTheme();
 
     return (
@@ -41,16 +40,6 @@ const Users = () => {
                         </Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} md={12}>
-                    <Box sx={{ textAlign: 'right', marginTop: '20px' }}>
-                        <Link to={`add`}>
-                            <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}>
-                                Add User
-                            </Button>
-                        </Link>
-                    </Box>
-                </Grid>
-
                 <Grid
                     item
                     xs={12}
@@ -66,27 +55,36 @@ const Users = () => {
                 <Grid item xs={12} md={4}>
                     <SubCard>
                         <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
-                            Avishka Devinda
+                            Damro
                         </Typography>
-                        <Typography variant="body2">CEO</Typography>
+                        <Typography variant="body2">Colombo</Typography>
                     </SubCard>
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <SubCard>
                         <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
-                            Saman Kumara
+                            Keels
                         </Typography>
 
-                        <Typography variant="body2">Manager</Typography>
+                        <Typography variant="body2">Kandy</Typography>
                     </SubCard>
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <SubCard>
                         <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
-                            Lakshan Kumara
+                            Singers
                         </Typography>
 
-                        <Typography variant="body2">Project Manager</Typography>
+                        <Typography variant="body2">Galle</Typography>
+                    </SubCard>
+                </Grid>
+                <Grid item xs={12} md={4}>
+                    <SubCard>
+                        <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
+                            Abans
+                        </Typography>
+
+                        <Typography variant="body2">Nugegoda</Typography>
                     </SubCard>
                 </Grid>
             </Grid>
@@ -94,4 +92,4 @@ const Users = () => {
     );
 };
 
-export default Users;
+export default Vendors;
