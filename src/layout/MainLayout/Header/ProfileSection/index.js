@@ -147,9 +147,8 @@ const ProfileSection = () => {
                                             }}
                                         >
                                             <ListItemButton
-                                                sx={{ borderRadius: `${customization.borderRadius}px` }}
-                                                selected={selectedIndex === 0}
-                                                onClick={(event) => handleListItemClick(event, 0, '/user/account-profile/profile1')}
+                                                sx={{ borderRadius: `${customization.borderRadius}px`, backgroundColor: '#fff' }}
+                                                onClick={(event) => handleListItemClick(event, 0, 'user/details')}
                                             >
                                                 <ListItemIcon>
                                                     <IconSettings stroke={1.5} size="1.3rem" />

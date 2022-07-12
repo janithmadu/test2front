@@ -16,14 +16,6 @@ const users = {
     type: 'group',
     children: [
         {
-            id: 'users1',
-            title: 'User Details',
-            type: 'item',
-            url: '/administrator/user/details',
-            icon: icons.IconUserCircle,
-            breadcrumbs: true
-        },
-        {
             id: 'user2',
             title: 'Users',
             type: 'item',

@@ -56,125 +56,71 @@ const UserRole = () => {
             <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '20px' }}>
                 User Role
             </Typography>
-           
-            <TextField
-                fullWidth
-                id="fullWidth"
-                label="Administraror"
-                variant="outlined"
-                margin="normal"
-                disabled
-            />
-             <Box sx={{ textAlign: 'center' }}>
-                    <FormGroup row >
-                        <FormControlLabel control={<Checkbox />} label="Add" />
-                        <FormControlLabel control={<Checkbox />} label="View" />
-                        <FormControlLabel control={<Checkbox />} label="Edit" />
-                        <FormControlLabel control={<Checkbox />} label="Print" />
-                        <FormControlLabel control={<Checkbox />} label="Approve" />
 
-                    </FormGroup>
-                </Box>
-                  <TextField
-                fullWidth
-                id="fullWidth"
-                label="Head Of Department"
-                variant="outlined"
-                margin="normal"
-                disabled
-            />
-             <Box sx={{ textAlign: 'center' }}>
-                    <FormGroup row >
-                           <FormControlLabel control={<Checkbox />} label="Add" />
-                        <FormControlLabel control={<Checkbox />} label="View" />
-                        <FormControlLabel control={<Checkbox />} label="Edit" />
-                        <FormControlLabel control={<Checkbox />} label="Print" />
-                        <FormControlLabel control={<Checkbox />} label="Approve" />
-                    </FormGroup>
-                </Box>
-              
-    
+            <TextField fullWidth id="fullWidth" label="Administraror" variant="outlined" margin="normal" disabled />
+            <Box sx={{ textAlign: 'center' }}>
+                <FormGroup row>
+                    <FormControlLabel control={<Checkbox />} label="Add" />
+                    <FormControlLabel control={<Checkbox />} label="View" />
+                    <FormControlLabel control={<Checkbox />} label="Edit" />
+                    <FormControlLabel control={<Checkbox />} label="Print" />
+                    <FormControlLabel control={<Checkbox />} label="Approve" />
+                </FormGroup>
+            </Box>
+            <TextField fullWidth id="fullWidth" label="Head Of Department" variant="outlined" margin="normal" disabled />
+            <Box sx={{ textAlign: 'center' }}>
+                <FormGroup row>
+                    <FormControlLabel control={<Checkbox />} label="Add" />
+                    <FormControlLabel control={<Checkbox />} label="View" />
+                    <FormControlLabel control={<Checkbox />} label="Edit" />
+                    <FormControlLabel control={<Checkbox />} label="Print" />
+                    <FormControlLabel control={<Checkbox />} label="Approve" />
+                </FormGroup>
+            </Box>
 
-               <TextField
-                fullWidth
-                id="fullWidth"
-                label="Manager"
-                variant="outlined"
-                margin="normal"
-                disabled
-            />
-             <Box sx={{ textAlign: 'center' }}>
-                    <FormGroup row >
-                           <FormControlLabel control={<Checkbox />} label="Add" />
-                        <FormControlLabel control={<Checkbox />} label="View" />
-                        <FormControlLabel control={<Checkbox />} label="Edit" />
-                        <FormControlLabel control={<Checkbox />} label="Print" />
-                        <FormControlLabel control={<Checkbox />} label="Approve" />
-                    </FormGroup>
-                </Box>
-              
+            <TextField fullWidth id="fullWidth" label="Manager" variant="outlined" margin="normal" disabled />
+            <Box sx={{ textAlign: 'center' }}>
+                <FormGroup row>
+                    <FormControlLabel control={<Checkbox />} label="Add" />
+                    <FormControlLabel control={<Checkbox />} label="View" />
+                    <FormControlLabel control={<Checkbox />} label="Edit" />
+                    <FormControlLabel control={<Checkbox />} label="Print" />
+                    <FormControlLabel control={<Checkbox />} label="Approve" />
+                </FormGroup>
+            </Box>
 
-               <TextField
-                fullWidth
-                id="fullWidth"
-                label="Staff"
-                variant="outlined"
-                margin="normal"
-                disabled
-            />
-             <Box sx={{ textAlign: 'center' }}>
-                    <FormGroup row >
-                           <FormControlLabel control={<Checkbox />} label="Add" />
-                        <FormControlLabel control={<Checkbox />} label="View" />
-                        <FormControlLabel control={<Checkbox />} label="Edit" />
-                        <FormControlLabel control={<Checkbox />} label="Print" />
-                        <FormControlLabel control={<Checkbox />} label="Approve" />
-                    </FormGroup>
-                </Box>
-              
+            <TextField fullWidth id="fullWidth" label="Staff" variant="outlined" margin="normal" disabled />
+            <Box sx={{ textAlign: 'center' }}>
+                <FormGroup row>
+                    <FormControlLabel control={<Checkbox />} label="Add" />
+                    <FormControlLabel control={<Checkbox />} label="View" />
+                    <FormControlLabel control={<Checkbox />} label="Edit" />
+                    <FormControlLabel control={<Checkbox />} label="Print" />
+                    <FormControlLabel control={<Checkbox />} label="Approve" />
+                </FormGroup>
+            </Box>
 
-               <TextField
-                fullWidth
-                id="fullWidth"
-                label="Partner"
-                variant="outlined"
-                margin="normal"
-                disabled
-            />
-             <Box sx={{ textAlign: 'center' }}>
-                    <FormGroup row >
-                           <FormControlLabel control={<Checkbox />} label="Add" />
-                        <FormControlLabel control={<Checkbox />} label="View" />
-                        <FormControlLabel control={<Checkbox />} label="Edit" />
-                        <FormControlLabel control={<Checkbox />} label="Print" />
-                        <FormControlLabel control={<Checkbox />} label="Approve" />
-                    </FormGroup>
-                </Box>
-              
+            <TextField fullWidth id="fullWidth" label="Partner" variant="outlined" margin="normal" disabled />
+            <Box sx={{ textAlign: 'center' }}>
+                <FormGroup row>
+                    <FormControlLabel control={<Checkbox />} label="Add" />
+                    <FormControlLabel control={<Checkbox />} label="View" />
+                    <FormControlLabel control={<Checkbox />} label="Edit" />
+                    <FormControlLabel control={<Checkbox />} label="Print" />
+                    <FormControlLabel control={<Checkbox />} label="Approve" />
+                </FormGroup>
+            </Box>
 
-         
-               <TextField
-                fullWidth
-                id="fullWidth"
-                label="Custom Role Name"
-                variant="outlined"
-                margin="normal"
-                disabled
-            />
-             <Box sx={{ textAlign: 'center' }}>
-                    <FormGroup row >
-                           <FormControlLabel control={<Checkbox />} label="Add" />
-                        <FormControlLabel control={<Checkbox />} label="View" />
-                        <FormControlLabel control={<Checkbox />} label="Edit" />
-                        <FormControlLabel control={<Checkbox />} label="Print" />
-                        <FormControlLabel control={<Checkbox />} label="Approve" />
-                    </FormGroup>
-                </Box>
-              
-
-         
-
-          
+            <TextField fullWidth id="fullWidth" label="Custom Role Name" variant="outlined" margin="normal" disabled />
+            <Box sx={{ textAlign: 'center' }}>
+                <FormGroup row>
+                    <FormControlLabel control={<Checkbox />} label="Add" />
+                    <FormControlLabel control={<Checkbox />} label="View" />
+                    <FormControlLabel control={<Checkbox />} label="Edit" />
+                    <FormControlLabel control={<Checkbox />} label="Print" />
+                    <FormControlLabel control={<Checkbox />} label="Approve" />
+                </FormGroup>
+            </Box>
 
             <Box sx={{ textAlign: 'right', marginTop: '10px' }}>
                 <Button variant="outlined" sx={{ borderRadius: '6px' }} onClick={PostData}>

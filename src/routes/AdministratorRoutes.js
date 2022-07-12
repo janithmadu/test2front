@@ -81,7 +81,7 @@ const AdministratorRoutes = {
                     path: 'add',
                     element: <AddUser />
                 },
-                 {
+                {
                     path: 'role',
                     element: <UserRole />
                 }
