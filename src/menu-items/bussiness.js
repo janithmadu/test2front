@@ -15,7 +15,6 @@ const business = {
     title: 'Business',
     type: 'group',
     children: [
-       
         {
             id: 'business2',
             title: 'Businesses',

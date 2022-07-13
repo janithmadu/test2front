@@ -45,9 +45,8 @@ const AddUserCustomRole = () => {
     return (
         <FormBox>
             <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '20px' }}>
-              User Custom Roles
+                User Custom Roles
             </Typography>
-          
 
             <TextField
                 fullWidth
@@ -57,7 +56,7 @@ const AddUserCustomRole = () => {
                 margin="normal"
                 onChange={(e) => customRoleName(e.target.value)}
             />
-                <Box sx={{ textAlign: 'center' }}>
+            <Box sx={{ textAlign: 'center' }}>
                 <FormGroup row>
                     <FormControlLabel control={<Checkbox />} label="Add" />
                     <FormControlLabel control={<Checkbox />} label="View" />

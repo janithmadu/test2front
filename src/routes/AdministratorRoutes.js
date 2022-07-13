@@ -42,7 +42,8 @@ const AddProductAndServiceCategory = Loadable(lazy(() => import('views/products-
 const Products = Loadable(lazy(() => import('views/products-and-services/Products')));
 const Services = Loadable(lazy(() => import('views/products-and-services/Services')));
 const AddProductAndService = Loadable(lazy(() => import('views/products-and-services/AddProductAndService')));
-
+const UOM = Loadable(lazy(() => import('views/products-and-services/UOM')));
+const AddUOM = Loadable(lazy(() => import('views/products-and-services/UOM/AddUOM')));
 
 //Budget Request
 const BudgetRequest = Loadable(lazy(() => import('views/document/BudgetRequest')));
@@ -63,7 +64,7 @@ const AdministratorRoutes = {
                     path: '',
                     element: <Businesses />
                 },
-                 {
+                {
                     path: ':id',
                     element: <Business />
                 },
@@ -96,11 +97,10 @@ const AdministratorRoutes = {
                     path: 'role',
                     element: <UserRole />
                 },
-                 {
+                {
                     path: 'role/add',
                     element: <AddUserCustomRole />
                 }
-                
             ]
         },
         {
@@ -147,11 +147,10 @@ const AdministratorRoutes = {
                     path: 'sample-documents',
                     element: <SampleDocuments />
                 },
-                 {
+                {
                     path: 'budget-request',
                     element: <BudgetRequest />
                 }
-                
             ]
         },
         {
@@ -180,6 +179,14 @@ const AdministratorRoutes = {
                 {
                     path: 'category/add',
                     element: <AddProductAndServiceCategory />
+                },
+                {
+                    path: 'uom',
+                    element: <UOM />
+                },
+                {
+                    path: 'uom/add',
+                    element: <AddUOM />
                 }
             ]
         }

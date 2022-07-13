@@ -11,9 +11,9 @@ import { Grid, Box, IconButton, Button } from '@mui/material';
 import { IconSettings, IconPlus } from '@tabler/icons';
 import { Link } from 'react-router-dom';
 
-// ==============================|| SERVICE PAGE ||============================== //
+// ==============================|| BUSINESS PAGE ||============================== //
 
-const Services = () => {
+const UOM = () => {
     const theme = useTheme();
 
     return (
@@ -21,14 +21,14 @@ const Services = () => {
             <Grid container spacing={2}>
                 <Grid item xs={12} md={12}>
                     <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '20px', margin: 'auto' }}>
-                        Services
+                        UOM
                     </Typography>
                 </Grid>
                 <Grid item xs={12} md={12}>
                     <Box sx={{ textAlign: 'right', marginTop: '20px' }}>
                         <Link to={`add`}>
                             <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}>
-                                Add Services
+                                Add UOM
                             </Button>
                         </Link>
                     </Box>
@@ -73,4 +73,4 @@ const Services = () => {
     );
 };
 
-export default Services;
+export default UOM;

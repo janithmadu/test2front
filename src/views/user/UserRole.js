@@ -25,8 +25,7 @@ import { useTheme } from '@mui/material/styles';
 import FormBox from 'ui-component/box/FormBox';
 import { Link } from 'react-router-dom';
 
-
-// ==============================|| SAMPLE PAGE ||============================== //
+// ==============================|| USER ROLE PAGE ||============================== //
 
 const UserRole = () => {
     const theme = useTheme();
@@ -55,7 +54,7 @@ const UserRole = () => {
 
     return (
         <FormBox>
-            <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '20px' }}>
+            {/*<Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '20px' }}>
                 User Role
             </Typography>
 
@@ -112,7 +111,7 @@ const UserRole = () => {
                     <FormControlLabel control={<Checkbox />} label="Approve" />
                 </FormGroup>
             </Box>
-
+*/}
             <TextField fullWidth id="fullWidth" label="Custom Role Name" variant="outlined" margin="normal" disabled />
             <Box sx={{ textAlign: 'center' }}>
                 <FormGroup row>
@@ -128,11 +127,10 @@ const UserRole = () => {
                 <Button variant="outlined" sx={{ borderRadius: '6px' }} onClick={PostData}>
                     cancel
                 </Button>
-                                        <Link to={`add`}>
-
-                <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}>
-                    Add New Role
-                </Button>
+                <Link to={`add`}>
+                    <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}>
+                        Add New Role
+                    </Button>
                 </Link>
             </Box>
         </FormBox>

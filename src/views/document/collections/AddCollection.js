@@ -23,7 +23,7 @@ import { createBusiness } from '../../../services/api';
 import { useTheme } from '@mui/material/styles';
 import FormBox from 'ui-component/box/FormBox';
 
-// ==============================|| SAMPLE PAGE ||============================== //
+// ==============================|| ADD DOCUMNET COLLECTION PAGE ||============================== //
 
 const AddCollection = () => {
     const theme = useTheme();

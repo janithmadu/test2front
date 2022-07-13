@@ -9,8 +9,9 @@ import { useTheme } from '@mui/material/styles';
 
 import { Grid, Box, IconButton, Button } from '@mui/material';
 import { IconSettings, IconPlus } from '@tabler/icons';
+import { Link } from 'react-router-dom';
 
-// ==============================|| BUSINESS PAGE ||============================== //
+// ==============================|| DOCUMENT COLLECTION PAGE ||============================== //
 
 const Collection = () => {
     const theme = useTheme();
@@ -25,9 +26,11 @@ const Collection = () => {
                 </Grid>
                 <Grid item xs={12} md={12}>
                     <Box sx={{ textAlign: 'right', marginTop: '20px' }}>
-                        <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}>
-                            Add Collection
-                        </Button>
+                        <Link to={`add`}>
+                            <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}>
+                                Add Collection
+                            </Button>
+                        </Link>
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={4}>

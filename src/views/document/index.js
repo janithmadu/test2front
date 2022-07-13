@@ -9,8 +9,9 @@ import { useTheme } from '@mui/material/styles';
 
 import { Grid, Box, IconButton, Button } from '@mui/material';
 import { IconSettings, IconPlus } from '@tabler/icons';
+import { Link } from 'react-router-dom';
 
-// ==============================|| BUSINESS PAGE ||============================== //
+// ==============================|| DOCUMENT PAGE ||============================== //
 
 const Document = () => {
     const theme = useTheme();
@@ -24,6 +25,15 @@ const Document = () => {
                     </Typography>
                 </Grid>
 
+                <Grid item xs={12} md={12}>
+                    <Box sx={{ textAlign: 'right', marginTop: '20px' }}>
+                        <Link to={`budget-request`}>
+                            <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}>
+                                Budget Request
+                            </Button>
+                        </Link>
+                    </Box>
+                </Grid>
                 <Grid item xs={12} md={4}>
                     <SubCard>
                         <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>

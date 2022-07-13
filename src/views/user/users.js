@@ -11,7 +11,7 @@ import { Grid, Box, IconButton, Button } from '@mui/material';
 import { IconSettings, IconPlus } from '@tabler/icons';
 import { Link } from 'react-router-dom';
 
-// ==============================|| BUSINESS PAGE ||============================== //
+// ==============================|| USERS PAGE ||============================== //
 
 const Users = () => {
     const theme = useTheme();

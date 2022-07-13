@@ -22,7 +22,7 @@ import {
 import { createBusiness } from '../../services/api';
 import { useTheme } from '@mui/material/styles';
 
-// ==============================|| SAMPLE PAGE ||============================== //
+// ==============================|| USER DETAILS PAGE ||============================== //
 
 const UserDetails = () => {
     const theme = useTheme();

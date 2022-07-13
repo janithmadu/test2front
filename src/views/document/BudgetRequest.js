@@ -23,7 +23,7 @@ import { createBusiness } from '../../services/api';
 import { useTheme } from '@mui/material/styles';
 import FormBox from 'ui-component/box/FormBox';
 
-// ==============================|| SAMPLE PAGE ||============================== //
+// ==============================|| BUDGET REQUEST PAGE ||============================== //
 
 const BudgetRequest = () => {
     const theme = useTheme();
@@ -46,65 +46,64 @@ const BudgetRequest = () => {
     };
 
     return (
-        <Box     sx={{
+        <Box
+            sx={{
                 padding: { xs: '10px', md: '0px 50px 0px 50px' },
                 backgroundColor: '#fff',
                 margin: 'auto'
             }}
-            >
+        >
             <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '20px' }}>
-               Budget Request
+                Budget Request
             </Typography>
 
-              <Grid container spacing={2}>
+            <Grid container spacing={2}>
+             <Grid container spacing={2} sx={{marginLeft:'0px'}} >
+                             <Grid item xs={12} md={3}>
+
+                    <FormControl fullWidth  margin="normal">
+                        <InputLabel id="demo-simple-select-label">Year</InputLabel>
+                        <Select labelId="demo-simple-select-label" id="demo-simple-select" label="Business Unit">
+                            <MenuItem value="kandy branch">2020</MenuItem>
+                            <MenuItem value="hr">2021</MenuItem>
+                            <MenuItem value="Finance">2022</MenuItem>
+                        </Select>
+                    </FormControl>
+                </Grid>
+                                </Grid>
+
                 <Grid item xs={12} md={3}>
-   <FormControl fullWidth margin="normal">
-                    <InputLabel id="demo-simple-select-label">Category</InputLabel>
-                    <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        label="Business Unit"
-                    >
-                        <MenuItem value="kandy branch">Category1</MenuItem>
-                        <MenuItem value="hr">Category2</MenuItem>
-                        <MenuItem value="Finance">Category3</MenuItem>
-                    </Select>
-                </FormControl>
+                    <FormControl fullWidth margin="normal">
+                        <InputLabel id="demo-simple-select-label">Category</InputLabel>
+                        <Select labelId="demo-simple-select-label" id="demo-simple-select" label="Business Unit">
+                            <MenuItem value="kandy branch">Category1</MenuItem>
+                            <MenuItem value="hr">Category2</MenuItem>
+                            <MenuItem value="Finance">Category3</MenuItem>
+                        </Select>
+                    </FormControl>
                 </Grid>
                 <Grid item xs={12} md={3}>
-                     <FormControl fullWidth margin="normal">
-                    <InputLabel id="demo-simple-select-label">Product Or Service</InputLabel>
-                    <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        label="Business Unit"
-                    >
-                        <MenuItem value="kandy branch">Product Or Service 1</MenuItem>
-                        <MenuItem value="hr">Product Or Service 2</MenuItem>
-                        <MenuItem value="Finance">Product Or Service 3</MenuItem>
-                    </Select>
-                </FormControl>
+                    <FormControl fullWidth margin="normal">
+                        <InputLabel id="demo-simple-select-label">Product Or Service</InputLabel>
+                        <Select labelId="demo-simple-select-label" id="demo-simple-select" label="Business Unit">
+                            <MenuItem value="kandy branch">Product Or Service 1</MenuItem>
+                            <MenuItem value="hr">Product Or Service 2</MenuItem>
+                            <MenuItem value="Finance">Product Or Service 3</MenuItem>
+                        </Select>
+                    </FormControl>
                 </Grid>
-                 <Grid item xs={12} md={3}>
-                     <FormControl fullWidth margin="normal">
-                    <InputLabel id="demo-simple-select-label">UOM</InputLabel>
-                    <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        label="Business Unit"
-                    >
-                        <MenuItem value="kandy branch">UOM1</MenuItem>
-                        <MenuItem value="hr">UOM2</MenuItem>
-                        <MenuItem value="Finance">UOM3</MenuItem>
-                    </Select>
-                </FormControl>
-                </Grid> <Grid item xs={12} md={3}>
-                    <TextField
-                        fullWidth
-                        label="Name"
-                        variant="outlined"
-                        margin="normal"
-                    />
+                <Grid item xs={12} md={3}>
+                    <FormControl fullWidth margin="normal">
+                        <InputLabel id="demo-simple-select-label">UOM</InputLabel>
+                        <Select labelId="demo-simple-select-label" id="demo-simple-select" label="Business Unit">
+                            <MenuItem value="kandy branch">UOM1</MenuItem>
+                            <MenuItem value="hr">UOM2</MenuItem>
+                            <MenuItem value="Finance">UOM3</MenuItem>
+                        </Select>
+                    </FormControl>
+                </Grid>{' '}
+                <Grid item xs={12} md={3}>
+                    <TextField fullWidth label="Name" variant="outlined" margin="normal" />
                 </Grid>
             </Grid>
 

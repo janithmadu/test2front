@@ -22,7 +22,7 @@ import {
 import { useTheme } from '@mui/material/styles';
 import FormBox from 'ui-component/box/FormBox';
 
-// ==============================|| SAMPLE PAGE ||============================== //
+// ==============================|| SAMPLE DOCUMENTS PAGE ||============================== //
 
 const SampleDocuments = () => {
     const theme = useTheme();
