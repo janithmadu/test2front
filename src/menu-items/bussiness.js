@@ -15,17 +15,10 @@ const business = {
     title: 'Business',
     type: 'group',
     children: [
-        {
-            id: 'business1',
-            title: 'Business Details',
-            type: 'item',
-            url: '/administrator/business/create',
-            icon: icons.IconId,
-            breadcrumbs: true
-        },
+       
         {
             id: 'business2',
-            title: 'Business Units',
+            title: 'Businesses',
             type: 'item',
             url: '/administrator/business',
             icon: icons.IconBuildingSkyscraper,
@@ -33,9 +26,9 @@ const business = {
         },
         {
             id: 'business3',
-            title: 'Add Business Units',
+            title: 'Add Business ',
             type: 'item',
-            url: '/administrator/business/add-unit',
+            url: '/administrator/business/add',
             icon: icons.IconSquarePlus,
             breadcrumbs: true
         }

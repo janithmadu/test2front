@@ -23,6 +23,8 @@ import {
 import { createBusiness } from '../../services/api';
 import { useTheme } from '@mui/material/styles';
 import FormBox from 'ui-component/box/FormBox';
+import { Link } from 'react-router-dom';
+
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
@@ -126,9 +128,12 @@ const UserRole = () => {
                 <Button variant="outlined" sx={{ borderRadius: '6px' }} onClick={PostData}>
                     cancel
                 </Button>
+                                        <Link to={`add`}>
+
                 <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}>
                     Add New Role
                 </Button>
+                </Link>
             </Box>
         </FormBox>
     );

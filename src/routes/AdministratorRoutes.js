@@ -6,15 +6,18 @@ import Loadable from 'ui-component/Loadable';
 
 // administrator routing
 
+//Busuness
 const Business = Loadable(lazy(() => import('views/business')));
 const CreateBusiness = Loadable(lazy(() => import('views/business/create')));
 const AddBusinessUnit = Loadable(lazy(() => import('views/business/AddBusinessUnit')));
+const Businesses = Loadable(lazy(() => import('views/business/businesses')));
 
 //User
 const UserDetails = Loadable(lazy(() => import('views/user/UserDetails')));
 const AddUser = Loadable(lazy(() => import('views/user/AddUser')));
 const Users = Loadable(lazy(() => import('views/user/users')));
 const UserRole = Loadable(lazy(() => import('views/user/UserRole')));
+const AddUserCustomRole = Loadable(lazy(() => import('views/user/UserCustomRole/AddUserCustomRole')));
 
 //partners
 const Customers = Loadable(lazy(() => import('views/partners/customers')));
@@ -40,6 +43,10 @@ const Products = Loadable(lazy(() => import('views/products-and-services/Product
 const Services = Loadable(lazy(() => import('views/products-and-services/Services')));
 const AddProductAndService = Loadable(lazy(() => import('views/products-and-services/AddProductAndService')));
 
+
+//Budget Request
+const BudgetRequest = Loadable(lazy(() => import('views/document/BudgetRequest')));
+
 //Protect Router
 import ProtectRouter from './ProtectRouter';
 
@@ -54,10 +61,14 @@ const AdministratorRoutes = {
             children: [
                 {
                     path: '',
+                    element: <Businesses />
+                },
+                 {
+                    path: ':id',
                     element: <Business />
                 },
                 {
-                    path: 'create',
+                    path: 'add',
                     element: <CreateBusiness />
                 },
                 {
@@ -84,7 +95,12 @@ const AdministratorRoutes = {
                 {
                     path: 'role',
                     element: <UserRole />
+                },
+                 {
+                    path: 'role/add',
+                    element: <AddUserCustomRole />
                 }
+                
             ]
         },
         {
@@ -130,7 +146,12 @@ const AdministratorRoutes = {
                 {
                     path: 'sample-documents',
                     element: <SampleDocuments />
+                },
+                 {
+                    path: 'budget-request',
+                    element: <BudgetRequest />
                 }
+                
             ]
         },
         {

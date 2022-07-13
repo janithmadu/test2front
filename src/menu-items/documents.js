@@ -40,14 +40,6 @@ const documents = {
             url: '/administrator/documents',
             icon: icons.IconFileDescription,
             breadcrumbs: true
-        },
-        {
-            id: 'documents4',
-            title: 'Submit a Documents',
-            type: 'item',
-            url: '/administrator/documents/sample-documents',
-            icon: icons.IconFileArrowRight,
-            breadcrumbs: true
         }
     ]
 };
