@@ -31,6 +31,7 @@ const UserDetails = () => {
     const [lastName, setLastName] = useState('');
     const [businessUnit, setBusinessUnit] = useState('');
     const [email, setEmail] = useState('');
+    const [location, setLocation] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [departmentAndTeamUnit, setDepartmentAndTeamUnit] = useState('');
     const [designation, setDesignation] = useState('');
@@ -105,6 +106,21 @@ const UserDetails = () => {
                         <MenuItem value="kandy branch">Kandy branch</MenuItem>
                         <MenuItem value="hr">HR</MenuItem>
                         <MenuItem value="Finance">Finance</MenuItem>
+                    </Select>
+                </FormControl>
+                <FormControl fullWidth margin="normal">
+                    <InputLabel id="demo-simple-select-label">Location</InputLabel>
+                    <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        label="Business Unit"
+                        value={location}
+                        onChange={(e) => setLocation(e.target.value)}
+                        disabled
+                    >
+                        <MenuItem value="kandy branch">Kandy</MenuItem>
+                        <MenuItem value="hr">Colombo</MenuItem>
+                        <MenuItem value="Finance">Galle</MenuItem>
                     </Select>
                 </FormControl>
 

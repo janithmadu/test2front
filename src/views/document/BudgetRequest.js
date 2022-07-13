@@ -58,20 +58,18 @@ const BudgetRequest = () => {
             </Typography>
 
             <Grid container spacing={2}>
-             <Grid container spacing={2} sx={{marginLeft:'0px'}} >
-                             <Grid item xs={12} md={3}>
-
-                    <FormControl fullWidth  margin="normal">
-                        <InputLabel id="demo-simple-select-label">Year</InputLabel>
-                        <Select labelId="demo-simple-select-label" id="demo-simple-select" label="Business Unit">
-                            <MenuItem value="kandy branch">2020</MenuItem>
-                            <MenuItem value="hr">2021</MenuItem>
-                            <MenuItem value="Finance">2022</MenuItem>
-                        </Select>
-                    </FormControl>
+                <Grid container spacing={2} sx={{ marginLeft: '0px' }}>
+                    <Grid item xs={12} md={3}>
+                        <FormControl fullWidth margin="normal">
+                            <InputLabel id="demo-simple-select-label">Year</InputLabel>
+                            <Select labelId="demo-simple-select-label" id="demo-simple-select" label="Business Unit">
+                                <MenuItem value="kandy branch">2020</MenuItem>
+                                <MenuItem value="hr">2021</MenuItem>
+                                <MenuItem value="Finance">2022</MenuItem>
+                            </Select>
+                        </FormControl>
+                    </Grid>
                 </Grid>
-                                </Grid>
-
                 <Grid item xs={12} md={3}>
                     <FormControl fullWidth margin="normal">
                         <InputLabel id="demo-simple-select-label">Category</InputLabel>

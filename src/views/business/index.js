@@ -9,6 +9,7 @@ import { useTheme } from '@mui/material/styles';
 
 import { Grid, Box, IconButton, Button } from '@mui/material';
 import { IconSettings, IconPlus } from '@tabler/icons';
+import { Link } from 'react-router-dom';
 
 // ==============================|| BUSINESS PAGE ||============================== //
 
@@ -58,15 +59,22 @@ const SamplePage = () => {
                     sx={{
                         marginTop: '10px',
                         display: 'flex',
-                        justifyContent: 'space-between',
+                        justifyContent: 'flex-end',
                         alignContent: 'center',
                         alignItems: 'center'
                     }}
                 >
-                    <Typography variant="h3"></Typography>
-                    <Button variant="contained" sx={{ borderRadius: '6px' }} startIcon={<IconPlus />}>
-                        Add Business units
-                    </Button>
+                    <Link to={`../add-location`}>
+                        <Button variant="contained" sx={{ borderRadius: '6px' }} startIcon={<IconPlus />}>
+                            Add Location
+                        </Button>
+                    </Link>
+
+                    <Link to={`../add-unit`}>
+                        <Button variant="contained" sx={{ marginLeft: '10px', borderRadius: '6px' }} startIcon={<IconPlus />}>
+                            Add Business units
+                        </Button>
+                    </Link>
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <SubCard title="Colombo Branch">

@@ -11,6 +11,7 @@ const Business = Loadable(lazy(() => import('views/business')));
 const CreateBusiness = Loadable(lazy(() => import('views/business/create')));
 const AddBusinessUnit = Loadable(lazy(() => import('views/business/AddBusinessUnit')));
 const Businesses = Loadable(lazy(() => import('views/business/businesses')));
+const AddBusinessLocation = Loadable(lazy(() => import('views/business/AddBusinessLocation')));
 
 //User
 const UserDetails = Loadable(lazy(() => import('views/user/UserDetails')));
@@ -75,6 +76,10 @@ const AdministratorRoutes = {
                 {
                     path: 'add-unit',
                     element: <AddBusinessUnit />
+                },
+                {
+                    path: 'add-location',
+                    element: <AddBusinessLocation />
                 }
             ]
         },

@@ -38,6 +38,7 @@ const AddUser = () => {
     const [role, setRole] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [location, setLocation] = useState('');
 
     const PostData = async () => {
         await createBusiness({
@@ -92,6 +93,21 @@ const AddUser = () => {
                 margin="normal"
                 onChange={(e) => setPhoneNumber(e.target.value)}
             />
+            <FormControl fullWidth margin="normal">
+                <InputLabel id="demo-simple-select-label">Location</InputLabel>
+                <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    label="Business Unit"
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                >
+                    <MenuItem value="kandy branch">Kandy</MenuItem>
+                    <MenuItem value="hr">Colombo</MenuItem>
+                    <MenuItem value="Finance">Galle</MenuItem>
+                </Select>
+            </FormControl>
+
             <FormControl fullWidth margin="normal">
                 <InputLabel id="demo-simple-select-label">Business Unit</InputLabel>
                 <Select
