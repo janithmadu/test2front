@@ -26,7 +26,7 @@ import FormBox from 'ui-component/box/FormBox';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
-const AddUserCustomRole = () => {
+const OneUserCustomRole = () => {
     const theme = useTheme();
 
     const [customRoleName, setCustomRoleName] = useState('');
@@ -51,7 +51,7 @@ const AddUserCustomRole = () => {
             <TextField
                 fullWidth
                 id="fullWidth"
-                label="Custom Role Name"
+                label="Haed Of Department"
                 variant="outlined"
                 margin="normal"
                 onChange={(e) => customRoleName(e.target.value)}
@@ -283,4 +283,4 @@ const AddUserCustomRole = () => {
     );
 };
 
-export default AddUserCustomRole;
+export default OneUserCustomRole;

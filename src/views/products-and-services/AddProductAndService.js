@@ -60,12 +60,22 @@ const AddProductAndService = () => {
                     onChange={(e) => setProductAndServiceName(e.target.value)}
                 />
 
-                <Box sx={{ textAlign: 'center' }}>
-                    <FormGroup row>
-                        <FormControlLabel control={<Checkbox />} label="Product" />
-                        <FormControlLabel control={<Checkbox />} label="Service" />
-                    </FormGroup>
+
+                    <Box>
+                    <FormControl sx={{ marginTop: '20px' }}>
+                        <RadioGroup
+                            row
+                            aria-labelledby="demo-row-radio-buttons-group-label"
+                            name="row-radio-buttons-group"
+                            defaultValue="ho"
+                        >
+                            <FormControlLabel value="Product" control={<Radio />} label="Product" />
+                            <FormControlLabel value="Service" control={<Radio />} label="Service" />
+      
+                        </RadioGroup>
+                    </FormControl>
                 </Box>
+
                 <FormControl fullWidth margin="normal">
                     <InputLabel id="demo-simple-select-label">Category</InputLabel>
                     <Select labelId="demo-simple-select-label" id="demo-simple-select" label="Category">

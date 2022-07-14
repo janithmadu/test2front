@@ -31,6 +31,7 @@ const AddUser = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [businessUnit, setBusinessUnit] = useState('');
+        const [businessName, setBusinessName] = useState('');
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [departmentAndTeamUnit, setDepartmentAndTeamUnit] = useState('');
@@ -105,6 +106,22 @@ const AddUser = () => {
                     <MenuItem value="kandy branch">Kandy</MenuItem>
                     <MenuItem value="hr">Colombo</MenuItem>
                     <MenuItem value="Finance">Galle</MenuItem>
+                </Select>
+            </FormControl>
+
+              
+    <FormControl fullWidth margin="normal">
+                <InputLabel id="demo-simple-select-label">Business name</InputLabel>
+                <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    label="Business Unit"
+                    value={businessName}
+                    onChange={(e) => setBusinessName(e.target.value)}
+                >
+                    <MenuItem value="kandy branch">W bussiness</MenuItem>
+                    <MenuItem value="hr">M business</MenuItem>
+                    <MenuItem value="R Business">Finance</MenuItem>
                 </Select>
             </FormControl>
 

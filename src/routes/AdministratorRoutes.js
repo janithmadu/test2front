@@ -18,7 +18,9 @@ const UserDetails = Loadable(lazy(() => import('views/user/UserDetails')));
 const AddUser = Loadable(lazy(() => import('views/user/AddUser')));
 const Users = Loadable(lazy(() => import('views/user/users')));
 const UserRole = Loadable(lazy(() => import('views/user/UserRole')));
+const UserCustomRole = Loadable(lazy(() => import('views/user/UserCustomRole/index')));
 const AddUserCustomRole = Loadable(lazy(() => import('views/user/UserCustomRole/AddUserCustomRole')));
+const OneUserCustomRole = Loadable(lazy(() => import('views/user/UserCustomRole/OneUserCustomRole')));
 
 //partners
 const Customers = Loadable(lazy(() => import('views/partners/customers')));
@@ -100,11 +102,15 @@ const AdministratorRoutes = {
                 },
                 {
                     path: 'role',
-                    element: <UserRole />
+                    element: <UserCustomRole />
                 },
                 {
                     path: 'role/add',
                     element: <AddUserCustomRole />
+                },
+                   {
+                    path: 'role/:id',
+                    element: <OneUserCustomRole />
                 }
             ]
         },

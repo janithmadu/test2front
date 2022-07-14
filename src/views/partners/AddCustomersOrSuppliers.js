@@ -64,14 +64,7 @@ const AddCustomersOrSuppliers = () => {
                     </FormGroup>
                 </Box>
 
-                <TextField
-                    fullWidth
-                    id="fullWidth"
-                    label="Contact Person"
-                    variant="outlined"
-                    margin="normal"
-                    onChange={(e) => setContactPerson(e.target.value)}
-                />
+           
                 <TextField
                     fullWidth
                     id="fullWidth"
@@ -99,10 +92,18 @@ const AddCustomersOrSuppliers = () => {
                 <TextField
                     fullWidth
                     id="fullWidth"
-                    label="city"
+                    label="City"
                     variant="outlined"
                     margin="normal"
                     onChange={(e) => setCity(e.target.value)}
+                />
+                     <TextField
+                    fullWidth
+                    id="fullWidth"
+                    label="Contact Person"
+                    variant="outlined"
+                    margin="normal"
+                    onChange={(e) => setContactPerson(e.target.value)}
                 />
                 <TextField
                     fullWidth
