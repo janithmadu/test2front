@@ -58,12 +58,22 @@ const AddProductAndServiceCategory = () => {
                     onChange={(e) => categoryName(e.target.value)}
                 />
 
-                  <Box sx={{ textAlign: 'center' }}>
-                    <FormGroup row>
-                        <FormControlLabel control={<Checkbox />} label="Product" />
-                        <FormControlLabel control={<Checkbox />} label="Service" />
-                    </FormGroup>
+
+                    <Box>
+                    <FormControl sx={{ marginTop: '20px' }}>
+                        <RadioGroup
+                            row
+                            aria-labelledby="demo-row-radio-buttons-group-label"
+                            name="row-radio-buttons-group"
+                            defaultValue="ho"
+                        >
+                            <FormControlLabel value="Product" control={<Radio />} label="Product" />
+                            <FormControlLabel value="Service" control={<Radio />} label="Service" />
+      
+                        </RadioGroup>
+                    </FormControl>
                 </Box>
+
                 <Box sx={{ textAlign: 'right', marginTop: '10px' }}>
                     <Button variant="outlined" sx={{ borderRadius: '6px' }} onClick={PostData}>
                         cancel

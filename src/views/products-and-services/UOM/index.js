@@ -21,7 +21,7 @@ const UOM = () => {
             <Grid container spacing={2}>
                 <Grid item xs={12} md={12}>
                     <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '20px', margin: 'auto' }}>
-                        UOM
+                        Units Of Measurement
                     </Typography>
                 </Grid>
                 <Grid item xs={12} md={12}>

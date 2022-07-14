@@ -55,7 +55,7 @@ const AddUser = () => {
     return (
         <FormBox>
             <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '20px' }}>
-                Add users
+                Add User
             </Typography>
             <Grid container spacing={2}>
                 <Grid item xs={12} md={6}>
@@ -94,6 +94,22 @@ const AddUser = () => {
                 margin="normal"
                 onChange={(e) => setPhoneNumber(e.target.value)}
             />
+
+             <FormControl fullWidth margin="normal">
+                <InputLabel id="demo-simple-select-label">Business name</InputLabel>
+                <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    label="Business Unit"
+                    value={businessName}
+                    onChange={(e) => setBusinessName(e.target.value)}
+                >
+                    <MenuItem value="kandy branch">W bussiness</MenuItem>
+                    <MenuItem value="hr">M business</MenuItem>
+                    <MenuItem value="R Business">Finance</MenuItem>
+                </Select>
+            </FormControl>
+
             <FormControl fullWidth margin="normal">
                 <InputLabel id="demo-simple-select-label">Location</InputLabel>
                 <Select
@@ -110,20 +126,7 @@ const AddUser = () => {
             </FormControl>
 
               
-    <FormControl fullWidth margin="normal">
-                <InputLabel id="demo-simple-select-label">Business name</InputLabel>
-                <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    label="Business Unit"
-                    value={businessName}
-                    onChange={(e) => setBusinessName(e.target.value)}
-                >
-                    <MenuItem value="kandy branch">W bussiness</MenuItem>
-                    <MenuItem value="hr">M business</MenuItem>
-                    <MenuItem value="R Business">Finance</MenuItem>
-                </Select>
-            </FormControl>
+   
 
             <FormControl fullWidth margin="normal">
                 <InputLabel id="demo-simple-select-label">Business Unit</InputLabel>

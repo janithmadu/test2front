@@ -14,7 +14,7 @@ const icons = {
 
 const productAndService = {
     id: 'productAndService',
-    title: 'Product | Service',
+    title: 'Items',
     type: 'group',
     children: [
         {

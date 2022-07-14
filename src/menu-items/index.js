@@ -5,12 +5,14 @@ import users from './users';
 import partners from './partners';
 import documents from './documents';
 import productAndService from './productAndService';
+import administration from './administration';
+
 import other from './other';
 
 // ==============================|| MENU ITEMS ||============================== //
 
 const menuItems = {
-    administratorItems: [dashboard, bussiness, users, partners, documents, productAndService, other],
+    administratorItems: [administration ,productAndService, partners, documents ],
     managerItems: [dashboard, documents, productAndService, other]
 };
 

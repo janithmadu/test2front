@@ -26,7 +26,7 @@ const documents = {
         },
         {
             id: 'documents2',
-            title: 'Collection',
+            title: 'Collections',
             type: 'item',
             url: '/administrator/documents/collection',
             icon: icons.IconCircles,

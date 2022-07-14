@@ -47,7 +47,7 @@ const AddCategory = () => {
     return (
         <FormBox>
             <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '20px' }}>
-                Add main category
+                Add Main Category
             </Typography>
 
             <Box sx={{ textAlign: 'center' }}>
@@ -117,7 +117,7 @@ const AddCategory = () => {
                     cancel
                 </Button>
                 <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}>
-                    Submit
+                    Save
                 </Button>
             </Box>
         </FormBox>

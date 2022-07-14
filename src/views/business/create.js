@@ -103,15 +103,7 @@ const CreateBusiness = () => {
                     margin="normal"
                     onChange={(e) => setBusinessAddress2(e.target.value)}
                 />
-                <FormControl fullWidth margin="normal">
-                    <InputLabel id="demo-simple-select-label">Country</InputLabel>
-                    <Select labelId="demo-simple-select-label" id="demo-simple-select" label="Business Unit">
-                        <MenuItem value="kandy branch">Sri Lanka</MenuItem>
-                        <MenuItem value="hr">Aus</MenuItem>
-                        <MenuItem value="Finance">IND</MenuItem>
-                    </Select>
-                </FormControl>
-                <TextField
+                          <TextField
                     fullWidth
                     id="fullWidth"
                     label="City"
@@ -120,6 +112,15 @@ const CreateBusiness = () => {
                     onChange={(e) => setCity(e.target.value)}
                 />
 
+                <FormControl fullWidth margin="normal">
+                    <InputLabel id="demo-simple-select-label">Country</InputLabel>
+                    <Select labelId="demo-simple-select-label" id="demo-simple-select" label="Business Unit">
+                        <MenuItem value="kandy branch">Sri Lanka</MenuItem>
+                        <MenuItem value="hr">Aus</MenuItem>
+                        <MenuItem value="Finance">IND</MenuItem>
+                    </Select>
+                </FormControl>
+      
                 <TextField
                     fullWidth
                     id="fullWidth"

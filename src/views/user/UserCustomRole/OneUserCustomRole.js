@@ -45,7 +45,7 @@ const OneUserCustomRole = () => {
     return (
         <FormBox>
             <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '20px' }}>
-                User Custom Roles
+                User Roles
             </Typography>
 
             <TextField

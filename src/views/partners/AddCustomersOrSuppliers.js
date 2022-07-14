@@ -59,8 +59,8 @@ const AddCustomersOrSuppliers = () => {
                 <Box sx={{ textAlign: 'center' }}>
                     <FormGroup row sx={{ justifyContent: 'center' }}>
                         <FormControlLabel control={<Checkbox />} label="Customer" />
-                        <FormControlLabel control={<Checkbox />} label="Suppilers" />
-                        <FormControlLabel control={<Checkbox />} label="other" />
+                        <FormControlLabel control={<Checkbox />} label="Vendor" />
+                        <FormControlLabel control={<Checkbox />} label="Other" />
                     </FormGroup>
                 </Box>
 
@@ -68,7 +68,7 @@ const AddCustomersOrSuppliers = () => {
                 <TextField
                     fullWidth
                     id="fullWidth"
-                    label="Name"
+                    label="Business Name"
                     variant="outlined"
                     margin="normal"
                     onChange={(e) => setName(e.target.value)}
@@ -97,6 +97,15 @@ const AddCustomersOrSuppliers = () => {
                     margin="normal"
                     onChange={(e) => setCity(e.target.value)}
                 />
+                      <FormControl fullWidth margin="normal">
+                    <InputLabel id="demo-simple-select-label">Country</InputLabel>
+                    <Select labelId="demo-simple-select-label" id="demo-simple-select" label="Business Unit">
+                        <MenuItem value="kandy branch">Sri Lanka</MenuItem>
+                        <MenuItem value="hr">Aus</MenuItem>
+                        <MenuItem value="Finance">IND</MenuItem>
+                    </Select>
+                </FormControl>
+                
                      <TextField
                     fullWidth
                     id="fullWidth"

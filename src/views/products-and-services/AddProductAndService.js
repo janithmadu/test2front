@@ -87,8 +87,8 @@ const AddProductAndService = () => {
                 <TextField fullWidth margin="normal" label="Description" multiline rows={4} />
                 <Box sx={{ textAlign: 'center' }}>
                     <FormGroup row>
-                        <FormControlLabel control={<Checkbox />} label="Sell this" />
-                        <FormControlLabel control={<Checkbox />} label="Buy this" />
+                        <FormControlLabel control={<Checkbox />} label="Sell This" />
+                        <FormControlLabel control={<Checkbox />} label="Buy This" />
                     </FormGroup>
                 </Box>
                 <Box sx={{ textAlign: 'right', marginTop: '10px' }}>
