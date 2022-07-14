@@ -11,6 +11,7 @@ import { Grid, Box, IconButton, Button } from '@mui/material';
 import { IconSettings, IconPlus } from '@tabler/icons';
 import { Link } from 'react-router-dom';
 
+
 // ==============================|| USERS PAGE ||============================== //
 
 const UserCustomRole = () => {
@@ -44,8 +45,8 @@ const UserCustomRole = () => {
                 <Grid item xs={12} md={12}>
                     <Box sx={{ textAlign: 'right', marginTop: '20px' }}>
                         <Link to={`add`}>
-                            <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}>
-                                Add User
+                            <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}   startIcon={<IconPlus />}>
+                                Add Role
                             </Button>
                         </Link>
                     </Box>

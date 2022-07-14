@@ -1,11 +1,12 @@
 // assets
-import { IconTruckDelivery, IconCirclePlus, IconUserCheck } from '@tabler/icons';
+import { IconTruckDelivery, IconCirclePlus, IconUserCheck,IconCell } from '@tabler/icons';
 
 // constant
 const icons = {
     IconTruckDelivery,
     IconCirclePlus,
-    IconUserCheck
+    IconUserCheck,
+    IconCell
 };
 
 // ==============================|| UTILITIES MENU ITEMS ||============================== //
@@ -29,6 +30,14 @@ const partners = {
             type: 'item',
             url: '/administrator/partners/vendors',
             icon: icons.IconTruckDelivery,
+            breadcrumbs: true
+        },
+            {
+            id: 'partners3',
+            title: 'Others',
+            type: 'item',
+            url: '/administrator/partners/others',
+            icon: icons.IconCell,
             breadcrumbs: true
         }
     ]

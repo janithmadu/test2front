@@ -51,16 +51,24 @@ const OneUserCustomRole = () => {
             <TextField
                 fullWidth
                 id="fullWidth"
-                label="Haed Of Department"
+                label="Role name"
                 variant="outlined"
                 margin="normal"
+                value="Head Of Department"
                 onChange={(e) => customRoleName(e.target.value)}
             />
        <Typography variant="h4" sx={{ textAlign: 'left', marginBottom: '10px', marginTop:'10px' }}>
                 Administration
             </Typography>
 
-            <Box sx={{ textAlign: 'center', display:'flex', alignItems:'center' ,justifyContent:'space-between',alignContent:'center'}}>
+            <Box sx={{ 
+                textAlign: 'center', 
+                display:'flex',
+                alignItems:{xs: 'flex-start', md: 'center'},
+                justifyContent:'space-between',
+                alignContent:'center',
+                flexDirection:{ xs: 'column', md: 'row' },
+             }}>
                <Typography variant="body1" sx={{ textAlign: 'center' }}>
                 Business
             </Typography>
@@ -69,11 +77,15 @@ const OneUserCustomRole = () => {
                     <FormControlLabel control={<Checkbox />} label="Add" />
                     <FormControlLabel control={<Checkbox />} label="View" />
                     <FormControlLabel control={<Checkbox />} label="Edit" />
-                    <FormControlLabel control={<Checkbox />} label="Print" />
                 </FormGroup>
             </Box>
 
-     <Box sx={{ textAlign: 'center', display:'flex', alignItems:'center' ,justifyContent:'space-between',alignContent:'center'}}>
+     <Box sx={{          textAlign: 'center', 
+                display:'flex',
+                alignItems:{xs: 'flex-start', md: 'center'},
+                justifyContent:'space-between',
+                alignContent:'center',
+                flexDirection:{ xs: 'column', md: 'row' }}}>
                <Typography variant="body1" sx={{ textAlign: 'center' }}>
                 Locations
             </Typography>
@@ -82,11 +94,15 @@ const OneUserCustomRole = () => {
                     <FormControlLabel control={<Checkbox />} label="Add" />
                     <FormControlLabel control={<Checkbox />} label="View" />
                     <FormControlLabel control={<Checkbox />} label="Edit" />
-                    <FormControlLabel control={<Checkbox />} label="Print" />
                 </FormGroup>
             </Box>  
 
-               <Box sx={{ textAlign: 'center', display:'flex', alignItems:'center' ,justifyContent:'space-between',alignContent:'center'}}>
+               <Box sx={{          textAlign: 'center', 
+                display:'flex',
+                alignItems:{xs: 'flex-start', md: 'center'},
+                justifyContent:'space-between',
+                alignContent:'center',
+                flexDirection:{ xs: 'column', md: 'row' }}}>
                <Typography variant="body1" sx={{ textAlign: 'center' }}>
                 Units
             </Typography>
@@ -95,11 +111,15 @@ const OneUserCustomRole = () => {
                     <FormControlLabel control={<Checkbox />} label="Add" />
                     <FormControlLabel control={<Checkbox />} label="View" />
                     <FormControlLabel control={<Checkbox />} label="Edit" />
-                    <FormControlLabel control={<Checkbox />} label="Print" />
                 </FormGroup>
             </Box>
 
-   <Box sx={{ textAlign: 'center', display:'flex', alignItems:'center' ,justifyContent:'space-between',alignContent:'center'}}>
+   <Box sx={{          textAlign: 'center', 
+                display:'flex',
+                alignItems:{xs: 'flex-start', md: 'center'},
+                justifyContent:'space-between',
+                alignContent:'center',
+                flexDirection:{ xs: 'column', md: 'row' }}}>
                <Typography variant="body1" sx={{ textAlign: 'center' }}>
                 Users
             </Typography>
@@ -108,11 +128,15 @@ const OneUserCustomRole = () => {
                     <FormControlLabel control={<Checkbox />} label="Add" />
                     <FormControlLabel control={<Checkbox />} label="View" />
                     <FormControlLabel control={<Checkbox />} label="Edit" />
-                    <FormControlLabel control={<Checkbox />} label="Print" />
                 </FormGroup>
             </Box>
 
-   <Box sx={{ textAlign: 'center', display:'flex', alignItems:'center' ,justifyContent:'space-between',alignContent:'center'}}>
+   <Box sx={{          textAlign: 'center', 
+                display:'flex',
+                alignItems:{xs: 'flex-start', md: 'center'},
+                justifyContent:'space-between',
+                alignContent:'center',
+                flexDirection:{ xs: 'column', md: 'row' }}}>
                <Typography variant="body1" sx={{ textAlign: 'center' }}>
                 Roles
             </Typography>
@@ -121,7 +145,6 @@ const OneUserCustomRole = () => {
                     <FormControlLabel control={<Checkbox />} label="Add" />
                     <FormControlLabel control={<Checkbox />} label="View" />
                     <FormControlLabel control={<Checkbox />} label="Edit" />
-                    <FormControlLabel control={<Checkbox />} label="Print" />
                 </FormGroup>
             </Box>
 
@@ -129,7 +152,12 @@ const OneUserCustomRole = () => {
                 Products | Services
             </Typography>
 
-            <Box sx={{ textAlign: 'center', display:'flex', alignItems:'center' ,justifyContent:'space-between',alignContent:'center'}}>
+            <Box sx={{          textAlign: 'center', 
+                display:'flex',
+                alignItems:{xs: 'flex-start', md: 'center'},
+                justifyContent:'space-between',
+                alignContent:'center',
+                flexDirection:{ xs: 'column', md: 'row' }}}>
                <Typography variant="body1" sx={{ textAlign: 'center' }}>
                 Products
             </Typography>
@@ -138,11 +166,15 @@ const OneUserCustomRole = () => {
                     <FormControlLabel control={<Checkbox />} label="Add" />
                     <FormControlLabel control={<Checkbox />} label="View" />
                     <FormControlLabel control={<Checkbox />} label="Edit" />
-                    <FormControlLabel control={<Checkbox />} label="Print" />
                 </FormGroup>
             </Box>
 
-     <Box sx={{ textAlign: 'center', display:'flex', alignItems:'center' ,justifyContent:'space-between',alignContent:'center'}}>
+     <Box sx={{          textAlign: 'center', 
+                display:'flex',
+                alignItems:{xs: 'flex-start', md: 'center'},
+                justifyContent:'space-between',
+                alignContent:'center',
+                flexDirection:{ xs: 'column', md: 'row' }}}>
                <Typography variant="body1" sx={{ textAlign: 'center' }}>
                 Services
             </Typography>
@@ -151,11 +183,15 @@ const OneUserCustomRole = () => {
                     <FormControlLabel control={<Checkbox />} label="Add" />
                     <FormControlLabel control={<Checkbox />} label="View" />
                     <FormControlLabel control={<Checkbox />} label="Edit" />
-                    <FormControlLabel control={<Checkbox />} label="Print" />
                 </FormGroup>
             </Box>  
 
-               <Box sx={{ textAlign: 'center', display:'flex', alignItems:'center' ,justifyContent:'space-between',alignContent:'center'}}>
+               <Box sx={{          textAlign: 'center', 
+                display:'flex',
+                alignItems:{xs: 'flex-start', md: 'center'},
+                justifyContent:'space-between',
+                alignContent:'center',
+                flexDirection:{ xs: 'column', md: 'row' }}}>
                <Typography variant="body1" sx={{ textAlign: 'center' }}>
                 Category
             </Typography>
@@ -164,11 +200,15 @@ const OneUserCustomRole = () => {
                     <FormControlLabel control={<Checkbox />} label="Add" />
                     <FormControlLabel control={<Checkbox />} label="View" />
                     <FormControlLabel control={<Checkbox />} label="Edit" />
-                    <FormControlLabel control={<Checkbox />} label="Print" />
                 </FormGroup>
             </Box>
 
-   <Box sx={{ textAlign: 'center', display:'flex', alignItems:'center' ,justifyContent:'space-between',alignContent:'center'}}>
+   <Box sx={{          textAlign: 'center', 
+                display:'flex',
+                alignItems:{xs: 'flex-start', md: 'center'},
+                justifyContent:'space-between',
+                alignContent:'center',
+                flexDirection:{ xs: 'column', md: 'row' }}}>
                <Typography variant="body1" sx={{ textAlign: 'center' }}>
                 UOM
             </Typography>
@@ -177,7 +217,6 @@ const OneUserCustomRole = () => {
                     <FormControlLabel control={<Checkbox />} label="Add" />
                     <FormControlLabel control={<Checkbox />} label="View" />
                     <FormControlLabel control={<Checkbox />} label="Edit" />
-                    <FormControlLabel control={<Checkbox />} label="Print" />
                 </FormGroup>
             </Box>
 
@@ -187,7 +226,12 @@ const OneUserCustomRole = () => {
                 Partners
             </Typography>
 
-            <Box sx={{ textAlign: 'center', display:'flex', alignItems:'center' ,justifyContent:'space-between',alignContent:'center'}}>
+            <Box sx={{          textAlign: 'center', 
+                display:'flex',
+                alignItems:{xs: 'flex-start', md: 'center'},
+                justifyContent:'space-between',
+                alignContent:'center',
+                flexDirection:{ xs: 'column', md: 'row' }}}>
                <Typography variant="body1" sx={{ textAlign: 'center' }}>
                 Customer
             </Typography>
@@ -196,11 +240,15 @@ const OneUserCustomRole = () => {
                     <FormControlLabel control={<Checkbox />} label="Add" />
                     <FormControlLabel control={<Checkbox />} label="View" />
                     <FormControlLabel control={<Checkbox />} label="Edit" />
-                    <FormControlLabel control={<Checkbox />} label="Print" />
                 </FormGroup>
             </Box>
 
-     <Box sx={{ textAlign: 'center', display:'flex', alignItems:'center' ,justifyContent:'space-between',alignContent:'center'}}>
+     <Box sx={{          textAlign: 'center', 
+                display:'flex',
+                alignItems:{xs: 'flex-start', md: 'center'},
+                justifyContent:'space-between',
+                alignContent:'center',
+                flexDirection:{ xs: 'column', md: 'row' }}}>
                <Typography variant="body1" sx={{ textAlign: 'center' }}>
                 Vendors
             </Typography>
@@ -209,11 +257,15 @@ const OneUserCustomRole = () => {
                     <FormControlLabel control={<Checkbox />} label="Add" />
                     <FormControlLabel control={<Checkbox />} label="View" />
                     <FormControlLabel control={<Checkbox />} label="Edit" />
-                    <FormControlLabel control={<Checkbox />} label="Print" />
                 </FormGroup>
             </Box>  
 
-               <Box sx={{ textAlign: 'center', display:'flex', alignItems:'center' ,justifyContent:'space-between',alignContent:'center'}}>
+               <Box sx={{          textAlign: 'center', 
+                display:'flex',
+                alignItems:{xs: 'flex-start', md: 'center'},
+                justifyContent:'space-between',
+                alignContent:'center',
+                flexDirection:{ xs: 'column', md: 'row' }}}>
                <Typography variant="body1" sx={{ textAlign: 'center' }}>
                 Other
             </Typography>
@@ -222,7 +274,6 @@ const OneUserCustomRole = () => {
                     <FormControlLabel control={<Checkbox />} label="Add" />
                     <FormControlLabel control={<Checkbox />} label="View" />
                     <FormControlLabel control={<Checkbox />} label="Edit" />
-                    <FormControlLabel control={<Checkbox />} label="Print" />
                 </FormGroup>
             </Box>
 
@@ -231,7 +282,12 @@ const OneUserCustomRole = () => {
                 Documents
             </Typography>
 
-            <Box sx={{ textAlign: 'center', display:'flex', alignItems:'center' ,justifyContent:'space-between',alignContent:'center'}}>
+            <Box sx={{          textAlign: 'center', 
+                display:'flex',
+                alignItems:{xs: 'flex-start', md: 'center'},
+                justifyContent:'space-between',
+                alignContent:'center',
+                flexDirection:{ xs: 'column', md: 'row' }}}>
                <Typography variant="body1" sx={{ textAlign: 'center' }}>
                 Category
             </Typography>
@@ -240,11 +296,15 @@ const OneUserCustomRole = () => {
                     <FormControlLabel control={<Checkbox />} label="Add" />
                     <FormControlLabel control={<Checkbox />} label="View" />
                     <FormControlLabel control={<Checkbox />} label="Edit" />
-                    <FormControlLabel control={<Checkbox />} label="Print" />
                 </FormGroup>
             </Box>
 
-     <Box sx={{ textAlign: 'center', display:'flex', alignItems:'center' ,justifyContent:'space-between',alignContent:'center'}}>
+     <Box sx={{          textAlign: 'center', 
+                display:'flex',
+                alignItems:{xs: 'flex-start', md: 'center'},
+                justifyContent:'space-between',
+                alignContent:'center',
+                flexDirection:{ xs: 'column', md: 'row' }}}>
                <Typography variant="body1" sx={{ textAlign: 'center' }}>
                 Collections
             </Typography>
@@ -253,11 +313,15 @@ const OneUserCustomRole = () => {
                     <FormControlLabel control={<Checkbox />} label="Add" />
                     <FormControlLabel control={<Checkbox />} label="View" />
                     <FormControlLabel control={<Checkbox />} label="Edit" />
-                    <FormControlLabel control={<Checkbox />} label="Print" />
                 </FormGroup>
             </Box>  
 
-               <Box sx={{ textAlign: 'center', display:'flex', alignItems:'center' ,justifyContent:'space-between',alignContent:'center'}}>
+               <Box sx={{          textAlign: 'center', 
+                display:'flex',
+                alignItems:{xs: 'flex-start', md: 'center'},
+                justifyContent:'space-between',
+                alignContent:'center',
+                flexDirection:{ xs: 'column', md: 'row' }}}>
                <Typography variant="body1" sx={{ textAlign: 'center' }}>
                 Documents
             </Typography>

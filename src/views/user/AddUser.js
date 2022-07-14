@@ -140,20 +140,7 @@ const AddUser = () => {
                 </Select>
             </FormControl>
 
-            <FormControl fullWidth margin="normal">
-                <InputLabel id="demo-simple-select-label">Department / Team</InputLabel>
-                <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    label="Business Unit"
-                    value={departmentAndTeamUnit}
-                    onChange={(e) => setDepartmentAndTeamUnit(e.target.value)}
-                >
-                    <MenuItem value="kandy branch">Kandy branch</MenuItem>
-                    <MenuItem value="hr">HR</MenuItem>
-                    <MenuItem value="Finance">Finance</MenuItem>
-                </Select>
-            </FormControl>
+         
             <TextField
                 fullWidth
                 id="fullWidth"

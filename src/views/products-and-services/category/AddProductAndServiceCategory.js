@@ -17,7 +17,8 @@ import {
     Checkbox,
     InputLabel,
     MenuItem,
-    Select
+    Select,
+    FormGroup
 } from '@mui/material';
 import { createBusiness } from '../../../services/api';
 import { useTheme } from '@mui/material/styles';
@@ -56,6 +57,13 @@ const AddProductAndServiceCategory = () => {
                     margin="normal"
                     onChange={(e) => categoryName(e.target.value)}
                 />
+
+                  <Box sx={{ textAlign: 'center' }}>
+                    <FormGroup row>
+                        <FormControlLabel control={<Checkbox />} label="Product" />
+                        <FormControlLabel control={<Checkbox />} label="Service" />
+                    </FormGroup>
+                </Box>
                 <Box sx={{ textAlign: 'right', marginTop: '10px' }}>
                     <Button variant="outlined" sx={{ borderRadius: '6px' }} onClick={PostData}>
                         cancel

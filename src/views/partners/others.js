@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 
 // ==============================|| BUSINESS PAGE ||============================== //
 
-const Vendors = () => {
+const Others = () => {
     const theme = useTheme();
 
     return (
@@ -45,7 +45,7 @@ const Vendors = () => {
                     <Box sx={{ textAlign: 'right', marginTop: '20px' }}>
                         <Link to={`../add`}>
                             <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}      startIcon={<IconPlus />}>
-                                Add Vendors
+                                Add Others
                             </Button>
                         </Link>
                     </Box>
@@ -102,4 +102,4 @@ const Vendors = () => {
     );
 };
 
-export default Vendors;
+export default Others;
