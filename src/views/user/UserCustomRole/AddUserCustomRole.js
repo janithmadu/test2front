@@ -51,7 +51,7 @@ const AddUserCustomRole = () => {
             <TextField
                 fullWidth
                 id="fullWidth"
-                label="Custom Name"
+                label="Role Name"
                 variant="outlined"
                 margin="normal"
                 onChange={(e) => customRoleName(e.target.value)}

@@ -64,15 +64,15 @@ const AddCustomersOrSuppliers = () => {
                     </FormGroup>
                 </Box>
 
-           
-                <TextField
-                    fullWidth
-                    id="fullWidth"
-                    label="Business Name"
-                    variant="outlined"
-                    margin="normal"
-                    onChange={(e) => setName(e.target.value)}
-                />
+
+                      <FormControl fullWidth margin="normal">
+                    <InputLabel id="demo-simple-select-label">Business Name</InputLabel>
+                    <Select labelId="demo-simple-select-label" id="demo-simple-select" label="Business Unit">
+                        <MenuItem value="kandy branch">Q business</MenuItem>
+                        <MenuItem value="hr">W Business</MenuItem>
+                        <MenuItem value="Finance">E Business</MenuItem>
+                    </Select>
+                </FormControl>
                 <TextField
                     fullWidth
                     id="fullWidth"
@@ -105,7 +105,7 @@ const AddCustomersOrSuppliers = () => {
                         <MenuItem value="Finance">IND</MenuItem>
                     </Select>
                 </FormControl>
-                
+
                      <TextField
                     fullWidth
                     id="fullWidth"
