@@ -85,7 +85,7 @@ const AdministratorRoutes = {
                     path: 'add-location',
                     element: <AddBusinessLocation />
                 },
-                  {
+                {
                     path: 'details',
                     element: <BusinessDetails />
                 }
@@ -114,7 +114,7 @@ const AdministratorRoutes = {
                     path: 'role/add',
                     element: <AddUserCustomRole />
                 },
-                   {
+                {
                     path: 'role/:id',
                     element: <OneUserCustomRole />
                 }
@@ -130,7 +130,7 @@ const AdministratorRoutes = {
                 {
                     path: 'vendors',
                     element: <Vendors />
-                },  
+                },
                 {
                     path: 'others',
                     element: <Others />

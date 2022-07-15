@@ -31,7 +31,7 @@ const AddUser = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [businessUnit, setBusinessUnit] = useState('');
-        const [businessName, setBusinessName] = useState('');
+    const [businessName, setBusinessName] = useState('');
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [departmentAndTeamUnit, setDepartmentAndTeamUnit] = useState('');
@@ -95,7 +95,7 @@ const AddUser = () => {
                 onChange={(e) => setPhoneNumber(e.target.value)}
             />
 
-             <FormControl fullWidth margin="normal">
+            <FormControl fullWidth margin="normal">
                 <InputLabel id="demo-simple-select-label">Business name</InputLabel>
                 <Select
                     labelId="demo-simple-select-label"
@@ -125,9 +125,6 @@ const AddUser = () => {
                 </Select>
             </FormControl>
 
-              
-   
-
             <FormControl fullWidth margin="normal">
                 <InputLabel id="demo-simple-select-label">Business Unit</InputLabel>
                 <Select
@@ -143,7 +140,6 @@ const AddUser = () => {
                 </Select>
             </FormControl>
 
-         
             <TextField
                 fullWidth
                 id="fullWidth"

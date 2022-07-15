@@ -1,5 +1,5 @@
 // assets
-import { IconTruckDelivery, IconCirclePlus, IconUserCheck,IconCell } from '@tabler/icons';
+import { IconTruckDelivery, IconCirclePlus, IconUserCheck, IconCell } from '@tabler/icons';
 
 // constant
 const icons = {
@@ -32,7 +32,7 @@ const partners = {
             icon: icons.IconTruckDelivery,
             breadcrumbs: true
         },
-            {
+        {
             id: 'partners3',
             title: 'Others',
             type: 'item',

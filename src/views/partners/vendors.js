@@ -41,10 +41,10 @@ const Vendors = () => {
                         </Typography>
                     </Box>
                 </Grid>
-                   <Grid item xs={12} md={12}>
+                <Grid item xs={12} md={12}>
                     <Box sx={{ textAlign: 'right', marginTop: '20px' }}>
                         <Link to={`../add`}>
-                            <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}      startIcon={<IconPlus />}>
+                            <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }} startIcon={<IconPlus />}>
                                 Add Vendors
                             </Button>
                         </Link>

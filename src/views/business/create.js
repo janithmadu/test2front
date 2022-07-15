@@ -103,7 +103,7 @@ const CreateBusiness = () => {
                     margin="normal"
                     onChange={(e) => setBusinessAddress2(e.target.value)}
                 />
-                          <TextField
+                <TextField
                     fullWidth
                     id="fullWidth"
                     label="City"
@@ -120,7 +120,7 @@ const CreateBusiness = () => {
                         <MenuItem value="Finance">IND</MenuItem>
                     </Select>
                 </FormControl>
-      
+
                 <TextField
                     fullWidth
                     id="fullWidth"

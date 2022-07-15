@@ -73,23 +73,11 @@ const AddBusinessUnit = () => {
                     margin: 'auto'
                 }}
             >
-                            <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '15px' }}>
+                <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '15px' }}>
                     Add Business Unit
                 </Typography>
-                 <TextField
-                    fullWidth
-                    id="fullWidth"
-                    label="Business Unit Name"
-                    variant="outlined"
-                    margin="normal"
-                />
-                <TextField
-                    fullWidth
-                    id="fullWidth"
-                    label="Business Unit Type"
-                    variant="outlined"
-                    margin="normal"
-                />
+                <TextField fullWidth id="fullWidth" label="Business Unit Name" variant="outlined" margin="normal" />
+                <TextField fullWidth id="fullWidth" label="Business Unit Type" variant="outlined" margin="normal" />
                 <Box sx={{ textAlign: 'right', marginTop: '10px' }}>
                     <Button variant="outlined" sx={{ borderRadius: '6px' }} onClick={PostData}>
                         cancel

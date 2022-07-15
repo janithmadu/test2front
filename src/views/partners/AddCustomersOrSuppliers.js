@@ -64,8 +64,7 @@ const AddCustomersOrSuppliers = () => {
                     </FormGroup>
                 </Box>
 
-
-                      <FormControl fullWidth margin="normal">
+                <FormControl fullWidth margin="normal">
                     <InputLabel id="demo-simple-select-label">Business Name</InputLabel>
                     <Select labelId="demo-simple-select-label" id="demo-simple-select" label="Business Unit">
                         <MenuItem value="kandy branch">Q business</MenuItem>
@@ -97,7 +96,7 @@ const AddCustomersOrSuppliers = () => {
                     margin="normal"
                     onChange={(e) => setCity(e.target.value)}
                 />
-                      <FormControl fullWidth margin="normal">
+                <FormControl fullWidth margin="normal">
                     <InputLabel id="demo-simple-select-label">Country</InputLabel>
                     <Select labelId="demo-simple-select-label" id="demo-simple-select" label="Business Unit">
                         <MenuItem value="kandy branch">Sri Lanka</MenuItem>
@@ -106,7 +105,7 @@ const AddCustomersOrSuppliers = () => {
                     </Select>
                 </FormControl>
 
-                     <TextField
+                <TextField
                     fullWidth
                     id="fullWidth"
                     label="Contact Person"

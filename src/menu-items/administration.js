@@ -1,12 +1,12 @@
 // assets
-import { IconSquarePlus, IconId, IconBuildingSkyscraper,  IconUserPlus,IconUsers } from '@tabler/icons';
+import { IconSquarePlus, IconId, IconBuildingSkyscraper, IconUserPlus, IconUsers } from '@tabler/icons';
 
 // constant
 const icons = {
     IconSquarePlus,
     IconId,
     IconBuildingSkyscraper,
-      IconUserPlus,
+    IconUserPlus,
     IconUsers
 };
 
@@ -26,7 +26,7 @@ const administration = {
             breadcrumbs: true
         },
 
-          {
+        {
             id: 'administration4',
             title: 'Users',
             type: 'item',
@@ -35,7 +35,7 @@ const administration = {
             breadcrumbs: true
         },
 
-         {
+        {
             id: 'administration5',
             title: 'Role',
             type: 'item',

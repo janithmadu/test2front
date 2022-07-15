@@ -28,17 +28,16 @@ const SamplePage = () => {
                         }}
                     >
                         <Box sx={{ textAlign: 'right' }}>
-                                            <Link to={`../details`}>
-
-                            <IconButton
-                                sx={{
-                                    backgroundColor: theme.palette.primary.light,
-                                    '&:hover': { backgroundColor: '#fff' },
-                                    textAlign: 'right'
-                                }}
-                            >
-                                <IconSettings stroke={1.5} size="1.5rem" color={theme.palette.primary.main} />
-                            </IconButton>
+                            <Link to={`../details`}>
+                                <IconButton
+                                    sx={{
+                                        backgroundColor: theme.palette.primary.light,
+                                        '&:hover': { backgroundColor: '#fff' },
+                                        textAlign: 'right'
+                                    }}
+                                >
+                                    <IconSettings stroke={1.5} size="1.5rem" color={theme.palette.primary.main} />
+                                </IconButton>
                             </Link>
                         </Box>
                         <Typography variant="h3" color="white">

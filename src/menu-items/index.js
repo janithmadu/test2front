@@ -12,7 +12,7 @@ import other from './other';
 // ==============================|| MENU ITEMS ||============================== //
 
 const menuItems = {
-    administratorItems: [administration ,productAndService, partners, documents ],
+    administratorItems: [administration, productAndService, partners, documents],
     managerItems: [dashboard, documents, productAndService, other]
 };
 

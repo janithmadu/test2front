@@ -11,7 +11,6 @@ import { Grid, Box, IconButton, Button } from '@mui/material';
 import { IconSettings, IconPlus } from '@tabler/icons';
 import { Link } from 'react-router-dom';
 
-
 // ==============================|| USERS PAGE ||============================== //
 
 const UserCustomRole = () => {
@@ -45,7 +44,7 @@ const UserCustomRole = () => {
                 <Grid item xs={12} md={12}>
                     <Box sx={{ textAlign: 'right', marginTop: '20px' }}>
                         <Link to={`add`}>
-                            <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}   startIcon={<IconPlus />}>
+                            <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }} startIcon={<IconPlus />}>
                                 Add Role
                             </Button>
                         </Link>
@@ -65,13 +64,12 @@ const UserCustomRole = () => {
                     }}
                 ></Grid>
                 <Grid item xs={12} md={4}>
-                                        <Link to={`566`}>
-
-                    <SubCard>
-                        <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
-                            Haed Of Department
-                        </Typography>
-                    </SubCard>
+                    <Link to={`566`}>
+                        <SubCard>
+                            <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
+                                Haed Of Department
+                            </Typography>
+                        </SubCard>
                     </Link>
                 </Grid>
                 <Grid item xs={12} md={4}>
@@ -79,7 +77,6 @@ const UserCustomRole = () => {
                         <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
                             Supervisor
                         </Typography>
-
                     </SubCard>
                 </Grid>
                 <Grid item xs={12} md={4}>
@@ -87,7 +84,6 @@ const UserCustomRole = () => {
                         <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
                             Partner
                         </Typography>
-
                     </SubCard>
                 </Grid>
             </Grid>

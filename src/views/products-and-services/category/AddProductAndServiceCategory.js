@@ -58,8 +58,7 @@ const AddProductAndServiceCategory = () => {
                     onChange={(e) => categoryName(e.target.value)}
                 />
 
-
-                    <Box>
+                <Box>
                     <FormControl sx={{ marginTop: '20px' }}>
                         <RadioGroup
                             row
@@ -69,7 +68,6 @@ const AddProductAndServiceCategory = () => {
                         >
                             <FormControlLabel value="Product" control={<Radio />} label="Product" />
                             <FormControlLabel value="Service" control={<Radio />} label="Service" />
-      
                         </RadioGroup>
                     </FormControl>
                 </Box>
