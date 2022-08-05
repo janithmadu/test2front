@@ -19,53 +19,86 @@ import {
     MenuItem,
     Select
 } from '@mui/material';
-import { createBusiness } from '../../../services/api';
+import { createItemUOM } from '../../../services/api';
 import { useTheme } from '@mui/material/styles';
 import FormBox from 'ui-component/box/FormBox';
+import { Formik } from 'formik';
+import { Link, useNavigate } from 'react-router-dom';
+
+import * as yup from 'yup';
+import Permission from 'component/permission';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
 const AddUOM = () => {
     const theme = useTheme();
+    const navigate = useNavigate();
 
-    const [categoryName, setCategoryName] = useState('');
+    const [name, setName] = useState('');
+
+    const validationSchema = yup.object({
+        name: yup.string('').required('UOM Name is required')
+    });
 
     const PostData = async () => {
-        await createBusiness({
-            name: businessName,
-            address: businessAddress,
-            contactName: contactName,
-            email: email,
-            userId: '2133',
-            author: 'avishka dev'
+        await createItemUOM({
+            name: name,
+            businessId: 'yty',
+            userId: 'fdgt5'
         });
     };
 
     return (
-        <>
+        <Permission name="itemsUomAdd">
             <FormBox>
                 <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '10px' }}>
                     Add UOM
                 </Typography>
-
-                <TextField
-                    fullWidth
-                    id="fullWidth"
-                    label="UOM Name"
-                    variant="outlined"
-                    margin="normal"
-                    onChange={(e) => categoryName(e.target.value)}
-                />
-                <Box sx={{ textAlign: 'right', marginTop: '10px' }}>
-                    <Button variant="outlined" sx={{ borderRadius: '6px' }} onClick={PostData}>
-                        cancel
-                    </Button>
-                    <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}>
-                        Submit
-                    </Button>
-                </Box>
+                <Formik
+                    initialValues={{
+                        name: '',
+                        itemType: 'Service',
+                        submit: null
+                    }}
+                    validationSchema={validationSchema}
+                    onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
+                        console.log(values);
+                        await createItemUOM({
+                            name: values.name,
+                            businessId: 'yty',
+                            userId: 'fdgt5'
+                        });
+                        navigate(`../uom`, true);
+                    }}
+                >
+                    {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (
+                        <form noValidate onSubmit={handleSubmit}>
+                            <TextField
+                                fullWidth
+                                id="fullWidth"
+                                label="UOM Name"
+                                variant="outlined"
+                                margin="normal"
+                                name="name"
+                                error={!!errors.name}
+                                helperText={touched.name ? errors.name : ''}
+                                onChange={handleChange}
+                            />
+                            <Box sx={{ textAlign: 'right', marginTop: '10px' }}>
+                                <Link to={`../uom`}>
+                                    <Button variant="outlined" sx={{ borderRadius: '6px' }}>
+                                        cancel
+                                    </Button>
+                                </Link>
+                                <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }} type="submit">
+                                    Submit
+                                </Button>
+                            </Box>
+                        </form>
+                    )}
+                </Formik>
             </FormBox>
-        </>
+        </Permission>
     );
 };
 

@@ -10,6 +10,7 @@ import { useTheme } from '@mui/material/styles';
 import { Grid, Box, IconButton, Button } from '@mui/material';
 import { IconSettings, IconPlus } from '@tabler/icons';
 import { Link } from 'react-router-dom';
+import Permission from 'component/permission';
 
 // ==============================|| DOCUMENT COLLECTION PAGE ||============================== //
 
@@ -17,7 +18,7 @@ const Collection = () => {
     const theme = useTheme();
 
     return (
-        <>
+        <Permission name="documentsCollectionsView">
             <Grid container spacing={2}>
                 <Grid item xs={12} md={12}>
                     <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '20px', margin: 'auto' }}>
@@ -26,11 +27,14 @@ const Collection = () => {
                 </Grid>
                 <Grid item xs={12} md={12}>
                     <Box sx={{ textAlign: 'right', marginTop: '20px' }}>
-                        <Link to={`add`}>
-                            <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }} startIcon={<IconPlus />}>
-                                Add Collection
-                            </Button>
-                        </Link>
+                      
+                        <Permission name="documentsCollectionsAdd" type="button">
+                            <Link to={`add`}>
+                                <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }} startIcon={<IconPlus />}>
+                                    Add Collection
+                                </Button>
+                            </Link>
+                        </Permission>
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={4}>
@@ -69,7 +73,7 @@ const Collection = () => {
                     </SubCard>
                 </Grid>
             </Grid>
-        </>
+        </Permission>
     );
 };
 

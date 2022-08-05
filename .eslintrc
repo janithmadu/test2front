@@ -34,8 +34,9 @@
         "jsx-a11y/anchor-is-valid": 0,
         "prefer-destructuring": 0,
         "no-shadow": 0,
+        "react-hooks/exhaustive-deps": 0,
         "no-unused-vars": [
-            1,
+            0,
             {
                 "ignoreRestSiblings": false
             }

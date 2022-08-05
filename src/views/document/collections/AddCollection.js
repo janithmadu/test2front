@@ -17,106 +17,215 @@ import {
     Checkbox,
     InputLabel,
     MenuItem,
-    Select
+    Select,
+    IconButton
 } from '@mui/material';
-import { createBusiness } from '../../../services/api';
+import { createDocumentCollection } from 'services/api';
 import { useTheme } from '@mui/material/styles';
 import FormBox from 'ui-component/box/FormBox';
+import usePermission from 'hooks/usePermission';
+import { IconSquareX, IconX, IconCloudUpload, IconPlus, IconTrash } from '@tabler/icons';
+import Permission from 'component/permission';
 
 // ==============================|| ADD DOCUMNET COLLECTION PAGE ||============================== //
 
 const AddCollection = () => {
     const theme = useTheme();
-
+    const inputDisable = usePermission('DocumentCollectionAdd');
+    console.log(inputDisable);
     const [collectionName, setCollectionName] = useState('');
-    const [mainCategory, setMainCategory] = useState('');
-    const [subCategory, setSubCategory] = useState('');
-    const [selectForms, setSelectForms] = useState('');
-    const [categoryType, setCategoryType] = useState('main');
+    const [collectionCategory, setCollectionCategory] = useState('');
+    const [collectionTemplate, setCollectionTemplate] = useState('');
+
+    const [inputFields, setInputFields] = useState([
+        {
+            mainCategory: '',
+            subCategory: '',
+            document: ''
+        },
+        {
+            mainCategory: '',
+            subCategory: '',
+            document: ''
+        }
+    ]);
 
     const PostData = async () => {
-        await createBusiness({
-            name: businessName,
-            address: businessAddress,
-            contactName: contactName,
-            email: email,
-            userId: '2133',
-            author: 'avishka dev'
+        console.log(inputFields);
+        // await createDocumentCollection({
+        //     name: businessName,
+        //     address: businessAddress,
+        //     contactName: contactName,
+        //     email: email,
+        //     userId: '2133',
+        //     author: 'avishka dev'
+        // });
+    };
+
+    const addInputField = () => {
+        setInputFields([
+            ...inputFields,
+            {
+                mainCategory: '',
+                subCategory: '',
+                document: ''
+            }
+        ]);
+        console.log(...inputFields, {
+            mainCategory: '',
+            subCategory: '',
+            document: ''
         });
     };
 
+    const removeInputFields = (index) => {
+        const rows = [...inputFields];
+        rows.splice(index, 1);
+        console.log(rows);
+        setInputFields(rows);
+    };
+    const handleChange = (index, evnt) => {
+        const { name, value } = evnt.target;
+        const list = [...inputFields];
+        list[index][name] = value;
+        console.log(list);
+        setInputFields(list);
+    };
+
     return (
-        <FormBox>
-            <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '20px' }}>
-                Add Collection
-            </Typography>
-
-            <TextField
-                fullWidth
-                id="fullWidth"
-                label="Collection Name"
-                variant="outlined"
-                margin="normal"
-                onChange={(e) => setCollectionName(e.target.value)}
-            />
-
-            <FormControl fullWidth margin="normal">
-                <InputLabel id="demo-simple-select-label">Main Category</InputLabel>
-                <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    label="Business Unit"
-                    value={mainCategory}
-                    onChange={(e) => setMainCategory(e.target.value)}
-                >
-                    <MenuItem value="employee registions branch">Employee Registions</MenuItem>
-                    <MenuItem value="customer payment">Customer Payment</MenuItem>
-                    <MenuItem value="annual budget">Annual Budget</MenuItem>
-                </Select>
-            </FormControl>
-
-            <FormControl fullWidth margin="normal">
-                <InputLabel id="demo-simple-select-label">Sub Category</InputLabel>
-                <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    label="Business Unit"
-                    value={subCategory}
-                    onChange={(e) => setSubCategory(e.target.value)}
-                >
-                    <MenuItem value="employee registions branch">Employee Registions</MenuItem>
-                    <MenuItem value="customer paymentr">Customer Payment</MenuItem>
-                    <MenuItem value="annual budgete">Annual Budget</MenuItem>
-                </Select>
-            </FormControl>
-
-            <FormControl fullWidth margin="normal">
-                <InputLabel id="demo-simple-select-label">Select Form</InputLabel>
-                <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    label="Business Unit"
-                    value={selectForms}
-                    onChange={(e) => setSelectForms(e.target.value)}
-                >
-                    <MenuItem value="kandy branch">Transport Request</MenuItem>
-                    <MenuItem value="hr">Acount Payble</MenuItem>
-                    <MenuItem value="Finance">Gate Pass</MenuItem>
-                </Select>
-            </FormControl>
-
-            <Button variant="contained" sx={{ borderRadius: '6px', marginTop: '10px', backgroundColor: theme.palette.blue.main }}>
-                add form
-            </Button>
-            <Box sx={{ textAlign: 'right', marginTop: '10px' }}>
-                <Button variant="outlined" sx={{ borderRadius: '6px' }} onClick={PostData}>
-                    cancel
+        <Permission name="documentsCollectionsAdd">
+            <Box
+                sx={{
+                    padding: '10px',
+                    backgroundColor: '#fff',
+                    margin: 'auto'
+                }}
+            >
+                {' '}
+                <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '20px' }}>
+                    Add Collection
+                </Typography>
+                <TextField
+                    fullWidth
+                    id="fullWidth"
+                    label="Collection Name"
+                    variant="outlined"
+                    margin="normal"
+                    onChange={(e) => setCollectionName(e.target.value)}
+                />
+                <FormControl fullWidth margin="normal">
+                    <InputLabel id="demo-simple-select-label">Collection Category</InputLabel>
+                    <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        label="collectionCategory"
+                        name="collectionCategory"
+                        value={collectionCategory}
+                        onChange={(e) => setCollectionCategory(e.target.value)}
+                    >
+                        <MenuItem value="employee registions branch">Employee Registions</MenuItem>
+                        <MenuItem value="customer paymentr">Customer Payment</MenuItem>
+                        <MenuItem value="annual budgete">Annual Budget</MenuItem>
+                    </Select>
+                </FormControl>
+                <FormControl fullWidth margin="normal">
+                    <InputLabel id="demo-simple-select-label">Collection Template</InputLabel>
+                    <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        label="Business Unit"
+                        name="collectionTemplate"
+                        value={collectionTemplate}
+                        onChange={(e) => setCollectionTemplate(e.target.value)}
+                    >
+                        <MenuItem value="employee registions branch">Employee Registions</MenuItem>
+                        <MenuItem value="customer paymentr">Customer Payment</MenuItem>
+                        <MenuItem value="annual budgete">Annual Budget</MenuItem>
+                    </Select>
+                </FormControl>
+                <div className="col-sm-8">
+                    {inputFields.map((data, index) => {
+                        const { mainCategory, subCategory, document } = data;
+                        return (
+                            <Grid container spacing={2} key={index}>
+                                <Grid item xs={12} md={3.5}>
+                                    <FormControl fullWidth margin="normal">
+                                        <InputLabel id="demo-simple-select-label">Main Category</InputLabel>
+                                        <Select
+                                            labelId="demo-simple-select-label"
+                                            id="demo-simple-select"
+                                            label="Business Unit"
+                                            onChange={(evnt) => handleChange(index, evnt)}
+                                            value={mainCategory}
+                                            name="mainCategory"
+                                        >
+                                            <MenuItem value="employee registions branch">Employee Registions</MenuItem>
+                                            <MenuItem value="customer paymentr">Customer Payment</MenuItem>
+                                            <MenuItem value="annual budgete">Annual Budget</MenuItem>
+                                        </Select>
+                                    </FormControl>
+                                </Grid>
+                                <Grid item xs={12} md={3}>
+                                    <FormControl fullWidth margin="normal">
+                                        <InputLabel id="demo-simple-select-label">Sub Category</InputLabel>
+                                        <Select
+                                            labelId="demo-simple-select-label"
+                                            id="demo-simple-select"
+                                            label="Business Unit"
+                                            onChange={(evnt) => handleChange(index, evnt)}
+                                            value={subCategory}
+                                            name="subCategory"
+                                        >
+                                            <MenuItem value="employee registions branch">Employee Registions</MenuItem>
+                                            <MenuItem value="customer paymentr">Customer Payment</MenuItem>
+                                            <MenuItem value="annual budgete">Annual Budget</MenuItem>
+                                        </Select>
+                                    </FormControl>
+                                </Grid>
+                                <Grid item xs={12} md={3}>
+                                    <FormControl fullWidth margin="normal">
+                                        <InputLabel id="demo-simple-select-label">Document</InputLabel>
+                                        <Select
+                                            labelId="demo-simple-select-label"
+                                            id="demo-simple-select"
+                                            label="Business Unit"
+                                            onChange={(evnt) => handleChange(index, evnt)}
+                                            value={document}
+                                            name="document"
+                                        >
+                                            <MenuItem value="employee registions branch">Employee Registions</MenuItem>
+                                            <MenuItem value="customer paymentr">Customer Payment</MenuItem>
+                                            <MenuItem value="annual budgete">Annual Budget</MenuItem>
+                                        </Select>
+                                    </FormControl>
+                                </Grid>
+                                <Grid item xs={12} md={1} sx={{ margin: 'auto' }}>
+                                    <IconButton sx={{ marginTop: '10px' }}>
+                                        <IconCloudUpload size={24} color="#212121" />
+                                    </IconButton>
+                                </Grid>
+                                <Grid item xs={12} md={1} sx={{ margin: 'auto' }}>
+                                    <IconButton onClick={removeInputFields} sx={{ marginTop: '10px' }}>
+                                        <IconTrash size={24} color="red" />
+                                    </IconButton>
+                                </Grid>
+                            </Grid>
+                        );
+                    })}
+                </div>
+                <Button onClick={addInputField} variant="contained" startIcon={<IconPlus />}>
+                    Add
                 </Button>
-                <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '10px' }}>
-                    add
-                </Button>
+                <Box sx={{ textAlign: 'right', marginTop: '10px' }}>
+                    <Button variant="outlined" sx={{ borderRadius: '6px' }}>
+                        cancel
+                    </Button>
+                    <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '10px' }} onClick={PostData}>
+                        save
+                    </Button>
+                </Box>
             </Box>
-        </FormBox>
+        </Permission>
     );
 };
 

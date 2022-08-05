@@ -1,3 +1,5 @@
+//react
+import { useEffect, useState } from 'react';
 // material-ui
 import { Typography } from '@mui/material';
 
@@ -10,44 +12,43 @@ import { useTheme } from '@mui/material/styles';
 import { Grid, Box, IconButton, Button } from '@mui/material';
 import { IconSettings, IconPlus } from '@tabler/icons';
 import { Link } from 'react-router-dom';
+import { getAllUsers } from '../../services/api';
+import Permission from 'component/permission';
 
 // ==============================|| USERS PAGE ||============================== //
 
 const Users = () => {
     const theme = useTheme();
+    const [users, setUsers] = useState([]);
+
+    // test for
+    async function fetchData() {
+        await getAllUsers()
+            .then((res) => {
+                console.log(res.data.data);
+                setUsers(res.data.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, []); // Or [] if effect doesn't need props or state
 
     return (
-        <>
+        <Permission name="usersView">
             <Grid container spacing={2}>
                 <Grid item xs={12} md={12}>
-                    <Box
-                        sx={{
-                            background: theme.palette.primary.main,
-                            padding: '30px',
-                            borderRadius: '12px'
-                        }}
-                    >
-                        <Typography variant="h3" color="white">
-                            z tech
-                        </Typography>
-                        <Typography variant="body2" color="white">
-                            Contact Name - Avishka Devinda
-                        </Typography>
-                        <Typography variant="body2" color="white">
-                            Business Address - 23/5 road, kandy, srilanka
-                        </Typography>
-                        <Typography variant="body2" color="white">
-                            Email - test@mail.com
-                        </Typography>
-                    </Box>
-                </Grid>
-                <Grid item xs={12} md={12}>
                     <Box sx={{ textAlign: 'right', marginTop: '20px' }}>
-                        <Link to={`add`}>
-                            <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }} startIcon={<IconPlus />}>
-                                Add User
-                            </Button>
-                        </Link>
+                        <Permission name="usersAdd" type="button">
+                            <Link to={`add`}>
+                                <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }} startIcon={<IconPlus />}>
+                                    Add User
+                                </Button>
+                            </Link>
+                        </Permission>
                     </Box>
                 </Grid>
 
@@ -63,34 +64,21 @@ const Users = () => {
                         alignItems: 'center'
                     }}
                 ></Grid>
-                <Grid item xs={12} md={4}>
-                    <SubCard>
-                        <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
-                            Avishka Devinda
-                        </Typography>
-                        <Typography variant="body2">CEO</Typography>
-                    </SubCard>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <SubCard>
-                        <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
-                            Saman Kumara
-                        </Typography>
 
-                        <Typography variant="body2">Manager</Typography>
-                    </SubCard>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <SubCard>
-                        <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
-                            Lakshan Kumara
-                        </Typography>
-
-                        <Typography variant="body2">Project Manager</Typography>
-                    </SubCard>
-                </Grid>
+                {users.map((user, index) => (
+                    <Grid item xs={12} md={4} key={index}>
+                        <Link to={user._id}>
+                            <SubCard>
+                                <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
+                                    {user.firstName} {user.lastName}
+                                </Typography>
+                                <Typography variant="body2">{user.email}</Typography>
+                            </SubCard>
+                        </Link>
+                    </Grid>
+                ))}
             </Grid>
-        </>
+        </Permission>
     );
 };
 

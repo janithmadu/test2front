@@ -1,3 +1,6 @@
+//react
+import { useEffect, useState } from 'react';
+
 // material-ui
 import { Typography } from '@mui/material';
 
@@ -10,63 +13,69 @@ import { useTheme } from '@mui/material/styles';
 import { Grid, Box, IconButton, Button } from '@mui/material';
 import { IconSettings, IconPlus } from '@tabler/icons';
 import { Link } from 'react-router-dom';
+import { getAllBusiness } from '../../services/api';
+
+import Permission from 'component/permission';
 
 // ==============================|| BUSINESS PAGE ||============================== //
 
 const Businesses = () => {
     const theme = useTheme();
 
+    const [businesses, setBusinesses] = useState([]);
+
+    // get all businesses
+    async function fetchData() {
+        await getAllBusiness()
+            .then((res) => {
+                console.log(res.data.data);
+                setBusinesses(res.data.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, []); // Or [] if effect doesn't need props or state
+
     return (
-        <>
+        <Permission name="businessView">
             <Grid container spacing={2}>
-                <Grid
-                    item
-                    xs={12}
-                    md={12}
-                    sx={{
-                        marginTop: '10px',
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignContent: 'center',
-                        alignItems: 'center'
-                    }}
-                >
-                    <Typography variant="h3"></Typography>
-                    <Link to={`add`}>
-                        <Button variant="contained" sx={{ borderRadius: '6px' }} startIcon={<IconPlus />}>
-                            Add Business
-                        </Button>
-                    </Link>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <Link to={`4364656`}>
-                        <SubCard title=" Test1 Technology">
-                            <Typography variant="body2">Contact Name - Avishka Devinda</Typography>
-                            <Typography variant="body2">Business Address - 23/5 road, kandy, srilanka</Typography>
-                            <Typography variant="body2">Email - test@mail.com</Typography>
-                        </SubCard>
-                    </Link>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <Link to={`34456`}>
-                        <SubCard title="Test2 Technology">
-                            <Typography variant="body2">Contact Name - Avishka Devinda</Typography>
-                            <Typography variant="body2">Business Address - 23/5 road, kandy, srilanka</Typography>
-                            <Typography variant="body2">Email - test@mail.com</Typography>
-                        </SubCard>
-                    </Link>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <Link to={`3543456`}>
-                        <SubCard title="Test3 Technology">
-                            <Typography variant="body2">Contact Name - Avishka Devinda</Typography>
-                            <Typography variant="body2">Business Address - 23/5 road, kandy, srilanka</Typography>
-                            <Typography variant="body2">Email - test@mail.com</Typography>
-                        </SubCard>
-                    </Link>
-                </Grid>
+                <Permission name="businessAdd" type="button">
+                    <Grid
+                        item
+                        xs={12}
+                        md={12}
+                        sx={{
+                            marginTop: '10px',
+                            display: 'flex',
+                            justifyContent: 'flex-end',
+                            alignContent: 'center',
+                            alignItems: 'center'
+                        }}
+                    >
+                        <Link to={`add`}>
+                            <Button variant="contained" sx={{ borderRadius: '6px' }} startIcon={<IconPlus />}>
+                                Add Business
+                            </Button>
+                        </Link>
+                    </Grid>
+                </Permission>
+                {businesses.map((business, index) => (
+                    <Grid item xs={12} md={4} key={index}>
+                        <Link to={business._id}>
+                            <SubCard title={business.businessName}>
+                                <Typography variant="body2">{business.businessEmail}</Typography>
+                                <Typography variant="body2">{business.businessCity}</Typography>
+                                <Typography variant="body2">{business.businessWeb}</Typography>
+                            </SubCard>
+                        </Link>
+                    </Grid>
+                ))}
             </Grid>
-        </>
+        </Permission>
     );
 };
 

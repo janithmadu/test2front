@@ -19,7 +19,7 @@ const users = {
             id: 'user2',
             title: 'Users',
             type: 'item',
-            url: '/administrator/user',
+            url: '/user',
             icon: icons.IconUsers,
             breadcrumbs: true
         },
@@ -27,7 +27,7 @@ const users = {
             id: 'user3',
             title: 'Role',
             type: 'item',
-            url: '/administrator/user/role',
+            url: '/user/role',
             icon: icons.IconUserPlus,
             breadcrumbs: true
         }

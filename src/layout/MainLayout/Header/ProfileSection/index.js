@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { SET_TOKEN } from 'store/actions';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
@@ -35,8 +36,11 @@ import { IconLogout, IconSettings, IconUser } from '@tabler/icons';
 
 const ProfileSection = () => {
     const theme = useTheme();
-    const customization = useSelector((state) => state.customization);
+    const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const customization = useSelector((state) => state.customization);
+    const auth = useSelector((state) => state.auth);
 
     const [selectedIndex, setSelectedIndex] = useState(-1);
     const [open, setOpen] = useState(false);
@@ -45,7 +49,12 @@ const ProfileSection = () => {
      * */
     const anchorRef = useRef(null);
     const handleLogout = async () => {
-        console.log('Logout');
+        const token = null;
+        dispatch({ type: SET_TOKEN, token });
+        localStorage.removeItem('token');
+        localStorage.removeItem('role');
+
+        console.log('Logout successfully ! ');
     };
 
     const handleClose = (event) => {
@@ -79,16 +88,18 @@ const ProfileSection = () => {
     return (
         <>
             <Avatar
-                src={User1}
+                src={'User1'}
                 sx={{
                     ...theme.typography.mediumAvatar,
                     margin: '8px 8px 8px 8px !important',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    color: '#212121c7',
+                    background: '#2121212e'
                 }}
                 ref={anchorRef}
                 aria-controls={open ? 'menu-list-grow' : undefined}
                 aria-haspopup="true"
-                color="inherit"
+                color="primary"
                 onClick={handleToggle}
             />
             <Popper
@@ -118,14 +129,14 @@ const ProfileSection = () => {
                                         <Stack>
                                             <Stack direction="row" spacing={0.5} alignItems="center">
                                                 <Typography component="span" variant="h4" sx={{ fontWeight: 600 }}>
-                                                    Johne Doe
+                                                    {auth.firstName} {auth.lastName}
                                                 </Typography>
                                             </Stack>
                                             <Typography
                                                 variant="subtitle1"
                                                 sx={{ fontWeight: 400, fontSize: '0.875rem', color: 'rgb(99, 115, 129)' }}
                                             >
-                                                Administrator
+                                                {auth.role.roleName}
                                             </Typography>
                                         </Stack>
                                     </Box>
@@ -148,7 +159,7 @@ const ProfileSection = () => {
                                         >
                                             <ListItemButton
                                                 sx={{ borderRadius: `${customization.borderRadius}px`, backgroundColor: '#fff' }}
-                                                onClick={(event) => handleListItemClick(event, 0, '/administrator/user/details')}
+                                                onClick={(event) => handleListItemClick(event, 0, '/user/profile')}
                                             >
                                                 <ListItemIcon>
                                                     <IconSettings stroke={1.5} size="1.3rem" />

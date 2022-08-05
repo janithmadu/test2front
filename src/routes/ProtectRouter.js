@@ -4,7 +4,10 @@ import MainLayout from 'layout/MainLayout';
 //import { selectCurrentToken } from './authSlice';
 
 const ProtectRouter = () => {
-    const token = 'dfdgdfh';
+    const auth = useSelector((state) => state.auth);
+
+    const token = auth.token;
+    // const token = '6786879'
     const location = useLocation();
     return token ? <MainLayout /> : <Navigate to="/login" state={{ from: location }} replace />;
 };

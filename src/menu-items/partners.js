@@ -17,26 +17,26 @@ const partners = {
     type: 'group',
     children: [
         {
-            id: 'partners1',
+            id: 'partnersCustomersView',
             title: 'Customers',
             type: 'item',
-            url: '/administrator/partners/customers',
+            url: '/partners/customers',
             icon: icons.IconUserCheck,
             breadcrumbs: true
         },
         {
-            id: 'partners2',
+            id: 'partnersVendorsView',
             title: 'Vendors',
             type: 'item',
-            url: '/administrator/partners/vendors',
+            url: '/partners/vendors',
             icon: icons.IconTruckDelivery,
             breadcrumbs: true
         },
         {
-            id: 'partners3',
+            id: 'partnersOtherView',
             title: 'Others',
             type: 'item',
-            url: '/administrator/partners/others',
+            url: '/partners/others',
             icon: icons.IconCell,
             breadcrumbs: true
         }

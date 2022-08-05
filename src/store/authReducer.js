@@ -10,12 +10,18 @@ import * as actionTypes from './actions';
 
 const defaultToken = localStorage.getItem('token');
 
+let localStorageRole = {};
+
+if (localStorage.getItem('role')) {
+    localStorageRole = JSON.parse(localStorage.getItem('role'));
+}
+
 export const initialState = {
-    username: 'avishka',
-    email: 'avishka@email.com',
-    password: '1234',
-    token: defaultToken,
-    opened: true
+    firstName: '',
+    lastName: '',
+    email: '',
+    role: localStorageRole,
+    token: defaultToken
 };
 
 // ==============================|| CUSTOMIZATION REDUCER ||============================== //
@@ -32,6 +38,18 @@ const authReducer = (state = initialState, action) => {
                 ...state,
                 token: action.token
             };
+        case actionTypes.SET_ROLE_NAME:
+            return {
+                ...state,
+                role: action.role
+            };
+        case actionTypes.SET_USER:
+            return {
+                ...state,
+                firstName: action.firstName,
+                lastName: action.lastName
+            };
+
         case actionTypes.SET_BORDER_RADIUS:
             return {
                 ...state,

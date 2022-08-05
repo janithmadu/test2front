@@ -18,28 +18,28 @@ const administration = {
     type: 'group',
     children: [
         {
-            id: 'administration1',
+            id: 'businessView',
             title: 'Business',
             type: 'item',
-            url: '/administrator/business',
+            url: '/business',
             icon: icons.IconBuildingSkyscraper,
             breadcrumbs: true
         },
 
         {
-            id: 'administration4',
+            id: 'usersView',
             title: 'Users',
             type: 'item',
-            url: '/administrator/user',
+            url: '/user',
             icon: icons.IconUsers,
             breadcrumbs: true
         },
 
         {
-            id: 'administration5',
+            id: 'rolesView',
             title: 'Role',
             type: 'item',
-            url: '/administrator/user/role',
+            url: '/user/role',
             icon: icons.IconUserPlus,
             breadcrumbs: true
         }

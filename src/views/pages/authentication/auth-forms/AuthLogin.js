@@ -25,6 +25,8 @@ import {
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 
+import { login } from '../../../../services/api';
+
 // project imports
 import useScriptRef from 'hooks/useScriptRef';
 import AnimateButton from 'ui-component/extended/AnimateButton';
@@ -34,13 +36,15 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 import Google from 'assets/images/icons/social-google.svg';
-import { SET_BORDER_RADIUS, SET_FONT_FAMILY, SET_LOGIN_SUCCESS, SET_TOKEN } from 'store/actions';
+import { SET_BORDER_RADIUS, SET_FONT_FAMILY, SET_LOGIN_SUCCESS, SET_TOKEN, SET_ROLE_NAME, SET_USER } from 'store/actions';
+import { useNavigate } from 'react-router-dom';
 
 // ============================|| FIREBASE - LOGIN ||============================ //
 
 const FirebaseLogin = ({ ...others }) => {
     const theme = useTheme();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const scriptedRef = useScriptRef();
     const matchDownSM = useMediaQuery(theme.breakpoints.down('md'));
@@ -76,7 +80,72 @@ const FirebaseLogin = ({ ...others }) => {
     //    }, [dispatch, borderRadius]);
 
     const checkUp = () => {
+        const role = {
+            _id: '62d78c38bfeb2313b04941a6',
+            roleName: 'test role',
+            businessView: true,
+            businessAdd: true,
+            businessEdit: true,
+            usersAdd: true,
+            usersView: true,
+            usersEdit: true,
+            rolesView: true,
+            rolesAdd: true,
+            rolesEdit: true,
+            productsView: true,
+            productsAdd: false,
+            productsEdit: false,
+            servicesView: true,
+            servicesAdd: false,
+            servicesEdit: false,
+            itemsCategoriesView: true,
+            itemsCategoriesAdd: false,
+            itemsCategoriesEdit: false,
+            itemsUomView: true,
+            itemsUomAdd: false,
+            itemsUomEdit: false,
+            partnersCustomersView: true,
+            partnersCustomersAdd: false,
+            partnersCustomersEdit: false,
+            partnersVendorsView: true,
+            partnersVendorsAdd: false,
+            partnersVendorsEdit: false,
+            partnersOtherView: true,
+            partnersOtherAdd: false,
+            partnersOtherEdit: false,
+            documentsCategoryView: true,
+            documentsCategoryAdd: false,
+            documentsCategoryEdit: false,
+            documentsCollectionsView: true,
+            documentsCollectionsAdd: false,
+            documentsCollectionsEdit: false,
+            documentsAdd: false,
+            documentsView: true,
+            documentsEdit: false,
+            documentsPrint: false,
+            documentsApprove: false,
+            userId: 'tyr6yy',
+            businessId: '34355',
+            createdAt: '2022-07-20T05:01:44.046Z',
+            __v: 0
+        };
+
+        dispatch({ type: SET_ROLE_NAME, role });
+
+        localStorage.setItem('role', JSON.stringify(role));
+
         console.log('checkup', auth);
+    };
+
+    const go = () => {
+        console.log('go');
+        const token = '43575firjtg';
+        dispatch({ type: SET_TOKEN, token });
+
+        if (true) {
+            console.log('ok');
+            navigate(`/user/profile`, true);
+        }
     };
 
     return (
@@ -93,6 +162,28 @@ const FirebaseLogin = ({ ...others }) => {
                 })}
                 onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
                     try {
+                        await login({
+                            email: values.email,
+                            password: values.password
+                        })
+                            .then((res) => {
+                                const token = res.data.token;
+                                const role = res.data.permission;
+                                const firstName = res.data.firstName;
+                                const lastName = res.data.lastName;
+
+                                dispatch({ type: SET_TOKEN, token });
+                                dispatch({ type: SET_ROLE_NAME, role });
+                                dispatch({ type: SET_USER, firstName, lastName });
+
+                                localStorage.setItem('role', JSON.stringify(role));
+                                localStorage.setItem('token', token);
+                            })
+                            .catch((err) => {
+                                console.log(err.response.data.error);
+                                setErrors({ submit: err.response.data.error });
+                            });
+
                         if (scriptedRef.current) {
                             setStatus({ success: true });
                             setSubmitting(false);
@@ -105,6 +196,9 @@ const FirebaseLogin = ({ ...others }) => {
                             setSubmitting(false);
                         }
                     }
+
+                    console.log('login', auth);
+                    await navigate(`/`, true);
                 }}
             >
                 {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (
@@ -196,7 +290,6 @@ const FirebaseLogin = ({ ...others }) => {
                                     variant="contained"
                                     color="primary"
                                     sx={{ padding: '12px 20px' }}
-                                    onClick={setUp}
                                 >
                                     Sign in
                                 </Button>

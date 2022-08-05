@@ -8,5 +8,5 @@ import AdministratorRoutes from './AdministratorRoutes';
 // ==============================|| ROUTING RENDER ||============================== //
 
 export default function ThemeRoutes() {
-    return useRoutes([MainRoutes, AdministratorRoutes, AuthenticationRoutes]);
+    return useRoutes([AdministratorRoutes, AuthenticationRoutes]);
 }

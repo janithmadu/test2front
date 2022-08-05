@@ -18,34 +18,34 @@ const productAndService = {
     type: 'group',
     children: [
         {
-            id: 'productAndService1',
+            id: 'productsView',
             title: 'Products',
             type: 'item',
-            url: '/administrator/products-and-services/products',
+            url: '/products-and-services/products',
             icon: icons.IconPackage,
             breadcrumbs: true
         },
         {
-            id: 'productAndService2',
+            id: 'servicesView',
             title: 'Services',
             type: 'item',
-            url: '/administrator/products-and-services/services',
+            url: '/products-and-services/services',
             icon: icons.IconSquareCheck,
             breadcrumbs: true
         },
         {
-            id: 'productAndService3',
+            id: 'itemsCategoriesView',
             title: 'Category',
             type: 'item',
-            url: '/administrator/products-and-services/category',
+            url: '/products-and-services/category',
             icon: icons.IconCategory,
             breadcrumbs: true
         },
         {
-            id: 'productAndService4',
+            id: 'itemsUomView',
             title: 'UOM',
             type: 'item',
-            url: '/administrator/products-and-services/uom',
+            url: '/products-and-services/uom',
             icon: icons.IconPercentage,
             breadcrumbs: true
         }

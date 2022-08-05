@@ -16,10 +16,10 @@ const business = {
     type: 'group',
     children: [
         {
-            id: 'business2',
+            id: 'businessView',
             title: 'Businesses',
             type: 'item',
-            url: '/administrator/business',
+            url: '/business',
             icon: icons.IconBuildingSkyscraper,
             breadcrumbs: true
         },
@@ -27,7 +27,7 @@ const business = {
             id: 'business3',
             title: 'Add Business ',
             type: 'item',
-            url: '/administrator/business/add',
+            url: '/business/add',
             icon: icons.IconSquarePlus,
             breadcrumbs: true
         }

@@ -15,6 +15,14 @@ import config from './config';
 
 // ==============================|| REACT DOM RENDER  ||============================== //
 
+if (process.env.NODE_ENV === 'production') {
+    console.log = () => {};
+    console.error = () => {};
+    console.debug = () => {};
+    console.table = () => {};
+    console.warn = () => {};
+}
+
 const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
 root.render(
