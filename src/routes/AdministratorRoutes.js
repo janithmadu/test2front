@@ -64,6 +64,11 @@ const Collection = Loadable(lazy(() => import('views/document/collections')));
 const AddCollection = Loadable(lazy(() => import('views/document/collections/AddCollection')));
 const AddCollectionTemplate = Loadable(lazy(() => import('views/document/collections/AddCollectionTemplate')));
 const CollectionTemplate = Loadable(lazy(() => import('views/document/collections/CollectionTemplate')));
+const AddCollectionMainCategory = Loadable(lazy(() => import('views/document/collections/AddCollectionMainCategory')));
+const CollectionSubCategory = Loadable(lazy(() => import('views/document/collections/CollectionSubCategory')));
+const AddCollectionSubCategory = Loadable(lazy(() => import('views/document/collections/AddCollectionSubCategory')));
+
+const EditCollectionMainCategory = Loadable(lazy(() => import('views/document/collections/EditCollectionMainCategory')));
 
 //form
 const Document = Loadable(lazy(() => import('views/document')));
@@ -280,6 +285,26 @@ const AdministratorRoutes = {
                 {
                     path: 'collection/add',
                     element: <AddCollection />
+                },{
+                      path: 'collection/category/add',
+                    element: <AddCollectionMainCategory />
+                    
+                },
+                {
+                    path: 'collection/category/sub/:id',
+                    element: <CollectionSubCategory />
+                    
+                },
+                {
+                    path: 'collection/category/sub/add/:id',
+                    element: <AddCollectionSubCategory />
+                    
+                },
+                {
+                     path: 'collection/category/main/edit/:id',
+                    element: <EditCollectionMainCategory />
+                    
+
                 },
                 {
                     path: '',

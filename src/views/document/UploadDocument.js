@@ -73,8 +73,8 @@ const UploadDocument = () => {
             remarks: remarks,
             documentName: documentName,
             status: status,
-            fileUrl: 'fileUrl',
-            fileName: 'fileName',
+            fileUrl: fileUrl,
+            fileName: fileName,
             userId: '4356'
         });
         navigate(`/documents/sub/one/${params.id}`, true);

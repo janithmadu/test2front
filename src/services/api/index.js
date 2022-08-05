@@ -323,6 +323,16 @@ export const getAllSubCategoryForDocument = (id) => {
 
 
 
+//get all Document category
+export const getCollectionCategory = () => {
+    return apiClient.get(`/api/v1/document/category/type/collection`);
+};
+
+//get all Document category
+export const getCollectionSubCategory = (id) => {
+    return apiClient.get(`/api/v1/document/category/type/collection/sub/${id}`);
+};
+
 
 
 export const uploadDocument = (files) => {

@@ -11,70 +11,72 @@ import { Grid, Box, IconButton, Button } from '@mui/material';
 import { IconSettings, IconPlus } from '@tabler/icons';
 import { Link } from 'react-router-dom';
 import Permission from 'component/permission';
+import { getCollectionCategory } from 'services/api';
+import { useEffect, useState } from 'react';
 
-// ==============================|| DOCUMENT COLLECTION PAGE ||============================== //
+
+
+// ==============================|| DOCUMENT PAGE ||============================== //
 
 const Collection = () => {
     const theme = useTheme();
+    const [categories, setCategories] = useState([]);
+
+    // fetch data
+    async function fetchData() {
+      
+
+              await getCollectionCategory()
+            .then((res) => {
+                console.log(res.data.data);
+                setCategories(res.data.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     return (
-        <Permission name="documentsCollectionsView">
+        <Permission name="documentsView">
             <Grid container spacing={2}>
                 <Grid item xs={12} md={12}>
                     <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: '20px', margin: 'auto' }}>
-                        Document Collection
+                        Collection
                     </Typography>
                 </Grid>
-                <Grid item xs={12} md={12}>
-                    <Box sx={{ textAlign: 'right', marginTop: '20px' }}>
-                      
-                        <Permission name="documentsCollectionsAdd" type="button">
-                            <Link to={`add`}>
-                                <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }} startIcon={<IconPlus />}>
-                                    Add Collection
+
+                <Permission name="documentsAdd" type="button">
+                    <Grid item xs={12} md={12}>
+                        <Box sx={{ textAlign: 'right', marginTop: '20px' }}>
+                            <Link to={`collection/category/add`}>
+                                <Button variant="contained" sx={{ borderRadius: '6px', marginLeft: '15px' }}>
+                                    Add Main Category
                                 </Button>
                             </Link>
-                        </Permission>
-                    </Box>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <SubCard>
-                        <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
-                            Employee Registration
-                        </Typography>
-                        <Typography variant="body2">Administration</Typography>
-                    </SubCard>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <SubCard>
-                        <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
-                            Customer Payments
-                        </Typography>
+                        </Box>
+                    </Grid>
+                </Permission>
 
-                        <Typography variant="body2">Finance</Typography>
-                    </SubCard>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <SubCard>
-                        <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
-                            Employee Allowances
-                        </Typography>
-
-                        <Typography variant="body2">Finance</Typography>
-                    </SubCard>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <SubCard>
-                        <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
-                            sahan prinerts
-                        </Typography>
-
-                        <Typography variant="body2">Finance</Typography>
-                    </SubCard>
-                </Grid>
+              {categories.map((category, index) => (
+                    <Grid item xs={12} md={4} key={index}>
+                        <Link to={`category/sub/${category._id}`}>
+                            <SubCard>
+                                <Typography variant="body1" sx={{ fontSize: '1rem', fonrWeight: '600' }}>
+                                    {category.mainCategoryName }
+                                </Typography>
+                                <Typography variant="body2">{category.type}</Typography>
+                            </SubCard>
+                        </Link>
+                    </Grid>
+                ))}
             </Grid>
         </Permission>
     );
 };
 
 export default Collection;
+
